@@ -1,0 +1,44 @@
+#summary Our V1.0 goals we want to achieve.
+#labels Phase-Design,Phase-Requirements
+
+== Functional design Goals ==
+
+|| *Last Update* || 1 Jan 2009 ||
+|| *Maintainer* || Richard de Jong ||
+|| *Status* || Proposal ||
+|| *Audience* || Developers ||
+|| || Public Domain ||
+
+*Index*
+
+<wiki:toc max_depth="3" />
+
+=== Purpose ===
+
+This page describes the design goals for the envisioned game “Dune2 – The Maker”.
+This page will help shape the future direction the project will take and will be continuously updated to reflect decisions where the project will advance forward to.
+
+ Note: _This document is currently a work in progres and you are encouraged to input and give comments regarding this work_.
+
+=== Vision ===
+
+_"I envision a game where I can choose to connect to a server from several freely maintained by players following a choice which side I would like to join. I decide to create my own side and take ownership of it allowing me to define a banner color._
+
+_Following is a hard struggle to get enough spice to create a mini base with only a basic starting unit. I’m now in the main chat channels asking if anyone would like to join my side as I cannot do this on my own, I decide to change the name of my side. Someone requests to join and agrees to mine for spice while I continue defending the base and complete construction of a construction yard."_  -- Richard de Jong.
+
+==== Key functions ===
+|| *Legenda* ||
+|| *Status* || || *Implementation* ||
+|| _undecided _ || This feature has not been approved and is unplanned. || _link_ || A wikipage with specifications needed to complete the feature. ||
+|| _approved_ || Approved but does not have priority for the current or near future milestones. || _unspecified_ || No specification has been designed yet. ||
+|| _plannedlater_ || The feature is planned for a later milestone. See [RoadMap] ||
+|| _planned_ || Planned for the current milestone. See [RoadMap] ||
+|| _inprogress_ || Work is being done on this main feature. See [RoadMap] for finer details when it will be subject for release. ||
+
+ * Client/Server seperation.(Library undecided) *Status:* _undecided_
+ * GUI Layer and functions. *Status:* _planned_
+ * Persistent gameplay world across seperate player run servers. *Status: * _undecided_
+ * Alternate graphics and music per server. *Status:* _undecided_
+ * Multi-platform. *Status:* _approved_
+ * Point of View experience will allow micro management of structures and units per side. *Status:* _undecided_
+ * Chat communication for players and multiple chat channels functionality. *Status:* _undecided_
