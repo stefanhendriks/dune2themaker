@@ -9,10 +9,6 @@
 || *Audience* || Developers ||
 || || Public Domain ||
 
-*Index*
-
-<wiki:toc max_depth="3" />
-
 == Purpose ==
 
 This page describes the design goals for the envisioned game “Dune2 – The Maker”.
@@ -30,13 +26,10 @@ _Following is a hard struggle to get enough spice to create a mini base with onl
 
 To make some structure and planning possibilities, features are made as modules that are apart of a phase being apart of a milestone like this:
 
- *Milestones
-
-  *Phases
-
-   *Features
-
-    *Modules
+ * Milestones
+  * Phases
+   * Features
+    * Modules
 
 The module describes the exact (portions of) files/classes the feature entails. Obviously making use of a wiki page for a detailed implementation description allows other developers the vision where the project is going to and what its current status is. More over, it allows one to see who is working on what.
 
