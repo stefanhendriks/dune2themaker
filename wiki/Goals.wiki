@@ -9,7 +9,6 @@
 || *Audience* || Developers ||
 || || Public Domain ||
 
-*index*
 
 <wiki:toc max_depth="3" />
 
