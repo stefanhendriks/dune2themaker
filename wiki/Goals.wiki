@@ -1,8 +1,6 @@
 #summary Our project goals, guidelines and features.
 #labels Phase-Design,Phase-Requirements
 
-= Functional design goals =
-
 || *Last Update* || 1 Jan 2009 ||
 || *Maintainer(s)* || Richard de Jong (rdejong81) ||
 || *Status* || Proposal ||
