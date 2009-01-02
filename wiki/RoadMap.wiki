@@ -11,11 +11,18 @@
 
 This page will describe in detail every aspect of the road that the project is following according to our [Goals].
 
+== Status ==
+
+|| *Trunk Locked?* || Yes, work is to be done in branches. ||
+|| *Features* || Accepted for 0.0.1 and beyond ||
+|| *Project Cycle states* || 1.1 for 0.0.1 ||
+|| *Release status* || Phase 0.0.1 has not qualified as of yet || 
+
 == Roadmap ==
 
 The cycle state refers to the development cycle as defined in our [Goals] page.
 
-|| *Milestone* || *Phase* || *Feature* || *Maintainer(s)* || *Cycle state* ||
+|| *Milestone* || *Phase* || *Features* || *Maintainer(s)* || *Cycle state* ||
 || || 0.0.1 || Essentials || || 1.1 ||
 || || || Project Wiki documentation push || rdejong81 ||
 || || || Resolving License Issues || - ||
