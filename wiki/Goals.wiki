@@ -31,6 +31,7 @@ _Following is a hard struggle to get enough spice to create a mini base with onl
 To make some structure and planning possibilities, features are made as modules that are apart of a phase being apart of a milestone like this:
 
   * Milestones
+
     * Phases
      * Features
       * Modules
