@@ -13,9 +13,9 @@ This page will describe in detail every aspect of the road that the project is f
 
 == Status ==
 
-|| *Trunk Locked?* || Yes, work is to be done in branches. ||
-|| *Features* || Accepted for 0.0.1 and beyond ||
-|| *Project Cycle states* || 1.1 for 0.0.1 ||
+|| *Trunk Status* || Locked, work directed to branches ||
+|| *Feature assignment* || Accepted for 0.0.1 and beyond ||
+|| *Project Cycle state(s)* || "1.1 Feature assignment" for 0.0.1 ||
 || *Release status* || Phase 0.0.1 has not qualified as of yet || 
 
 == Roadmap ==
