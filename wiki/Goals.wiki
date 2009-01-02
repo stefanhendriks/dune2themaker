@@ -9,6 +9,10 @@
 || *Audience* || Developers ||
 || || Public Domain ||
 
+*index*
+
+<wiki:toc max_depth="3" />
+
 == Purpose ==
 
 This page describes the design goals for the envisioned game “Dune2 – The Maker”.
