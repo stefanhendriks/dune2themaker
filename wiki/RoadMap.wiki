@@ -1,0 +1,23 @@
+#summary Detailed RoadMap and Milestone/Phase status.
+#labels Phase-Implementation
+
+|| *Last Update* || 1 Jan 2009 ||
+|| *Maintainer(s)* || Richard de Jong (rdejong81) ||
+|| *Status* || Proposal ||
+|| *Audience* || Developers ||
+|| || Public Domain ||
+
+== Purpose ==
+
+This page will describe in detail every aspect of the road that the project is following according to our [Goals].
+
+== Roadmap ==
+
+The cycle state refers to the development cycle as defined in our [Goals] page.
+
+|| *Milestone* || *Phase* || *Feature* || *Maintainer(s)* || *Cycle state* ||
+|| || 0.0.1 || Essentials || || 1.1 ||
+|| || || Project Wiki documentation push || rdejong81 ||
+|| || || Resolving License Issues || - ||
+|| || 0.0.2 || Improvements || || - ||
+|| 0.1.0 || || Minimal working version with networking support || - || - ||
