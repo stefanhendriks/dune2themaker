@@ -90,6 +90,6 @@ Considerations:
 || ||Persistent gameplay world across seperate player run servers||_undecided_ _unspecified_|| - ||
 || ||Chat communication for players and multiple chat channels functionality||_undecided unspecified_|| - ||
 || *Content* ||
-|| ||Resolving License Issues||_approved unspecified_|| - ||
+|| ||Resolving License Issues||_planned unspecified_|| - ||
 || ||GUI Layer and functions||_undecided unspecified_|| - ||
 || ||Alternate graphics and music per server||_undecided unspecified_|| - ||
