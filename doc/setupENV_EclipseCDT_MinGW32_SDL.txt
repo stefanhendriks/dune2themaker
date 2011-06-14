@@ -1,0 +1,29 @@
+Copied from:
+http://davw.nfshost.com/c/sdl_eclipse.html
+
+
+Installing Eclipse
+==================
+
+Once you have downloaded Eclipse, all you need to do is unpack it into a sensible directory and then run the application. You will need a JRE installed in order for Eclipse to run. If you are using Linux it should find all your compilers and tools; if you are using Windows is should find MinGW as long as it is installed
+
+Installing SDL
+==============
+
+This step differs depending on your operating system
+
+On Linux, Unix and variants, you will need to install libsdl-dev package for whatever distribution you are using
+On Windows, you will need to extract the development package from www.libsdl.org into your MinGW folder, 
+so that the files from 'bin' in the archive go to MinGW/bin and so on. Setting up your Eclipse project for SDL
+
+Once you have created a new project using the Eclipse new project dialog (either C or C++), you will to add SDL 
+support to the project. In the SDL documentation, you will see reference to an 'sdl-config' script. 
+Unfortunately the limited shell capabilities of Windows mean that we have to put this info in manually. 
+
+Open up the Project->Properties menu.
+
+Go into the C/C++ Build -> Settings page
+
+In the Compiler->Preprocessor section, add the defined symbol "main=SDL_main"
+In the Linker->Libraries section, add the libraries "mingw32" (Windows only), "SDLmain" and "SDL" libraries (in that order).
+In the Linker->Miscellaneous section, add "-mwindows" to the Linker Flags box (Windows only)
