@@ -5,6 +5,7 @@ cls
 echo.
 echo Prepare binary package (./bin) of D2TM. 
 echo.
+echo D2TM_HOME is %D2TM_HOME%
 echo Will copy "Dune 2.exe" from the Default dir created by Eclipse CDT.
 echo Will copy DLL files from dll/mingw32
 echo.
@@ -31,9 +32,9 @@ copy resources\campaign\info.txt bin\campaign\info.txt
 
 echo 5. Creating new data directory
 mkdir bin\data
-xcopy /I /D /E "resources/data" "../bin/data"
 
 echo 6. Copying to data
+xcopy /I /D /E "resources/data" "bin/data"
 copy resources\data\*.fon bin\data\font
 copy resources\data\*.ttf bin\data\font
 
