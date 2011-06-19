@@ -22,22 +22,22 @@ class Timer
 public:
 	// Elapsed time in [ms], after starting the game or creating the timer class
 	// return is int - which is faster than float
-	virtual int ElapsedTime_msec() = 0;
+	virtual int getElapsedTimeSinceCreationInMsec() = 0;
 
 	// elapsed time in [s], after starting the game or creating the time class
 	// return is float - more precise
-	virtual float ElapsedTime_sec() = 0;
+	virtual float getElapsedTimeSinceCreationInSec() = 0;
 
 	// delta time in [ms] units, this is the elapsed time from last call of this function
 	// return as int - if the elapsed time is exactly in ms units, it must handle those problems
 	// so the time measurement must be accurate, many small time increments must make the same result
 	// as in absolute elapsed time, so if I call this function every 0.2ms and always get 0 as a result
 	// then it is bad
-	virtual int DeltaTime_msec() = 0;
+	virtual int getDeltaTimeSinceLastCalledInMsec() = 0;
 
 	// delta time in [s] units, this is the elapsed time from last call of this function
 	// return as float
-	virtual float DeltaTime_sec() = 0;
+	virtual float getDeltaTimeSinceLastCalledInSec() = 0;
 };
 
 
