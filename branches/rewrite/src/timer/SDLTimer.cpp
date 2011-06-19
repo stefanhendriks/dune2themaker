@@ -10,8 +10,7 @@
 #include "SDL/SDL.h"
 
 
-SDLTimer::SDLTimer()
-{
+SDLTimer::SDLTimer() {
 	m_TickStart = SDL_GetTicks();
 	m_TickLast = SDL_GetTicks();
 }
