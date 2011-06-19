@@ -6,27 +6,27 @@
  *
  */
 
-#include "timer_SDL.h"
+#include "SDLTimer.h"
 #include "SDL/SDL.h"
 
 
-Timer_SDL::Timer_SDL()
+SDLTimer::SDLTimer()
 {
 	m_TickStart = SDL_GetTicks();
 	m_TickLast = SDL_GetTicks();
 }
 
-int Timer_SDL::ElapsedTime_msec()
+int SDLTimer::getElapsedTimeSinceCreationInMsec()
 {
 	return SDL_GetTicks() - m_TickStart;
 }
 
-float Timer_SDL::ElapsedTime_sec()
+float SDLTimer::getElapsedTimeSinceCreationInSec()
 {
 	return float(SDL_GetTicks() - m_TickStart) / 1000.0f;
 }
 
-int Timer_SDL::DeltaTime_msec()
+int SDLTimer::getDeltaTimeSinceLastCalledInMsec()
 {
 	int new_Ticks = SDL_GetTicks();
 	if (new_Ticks == m_TickLast)
@@ -37,8 +37,8 @@ int Timer_SDL::DeltaTime_msec()
 
 }
 
-float Timer_SDL::DeltaTime_sec()
+float SDLTimer::getDeltaTimeSinceLastCalledInSec()
 {
-	return float(DeltaTime_msec()) / 1000.0f;
+	return float(getDeltaTimeSinceLastCalledInMsec()) / 1000.0f;
 
 }
