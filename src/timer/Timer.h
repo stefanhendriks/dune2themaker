@@ -14,8 +14,8 @@
  */
 
 
-#ifndef TIMER_BASE_H
-#define TIMER_BASE_H
+#ifndef TIMER_H
+#define TIMER_H
 
 class Timer
 {
