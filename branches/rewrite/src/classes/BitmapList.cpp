@@ -8,7 +8,9 @@
 #include "Bitmap.h"
 #include "SDL/SDL.h"
 #include "assert.h"
+#include "Singleton.h"
 
+template<class C>
 DefSingleton(BitmapList);
 
 BitmapList::BitmapList()

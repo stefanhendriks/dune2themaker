@@ -5,16 +5,16 @@
  * calling the createGame() function!
  */
 
-#ifndef GAMEFACTORY_H_
-#define GAMEFACTORY_H_
+#ifndef D2TM_GAMEFACTORY_H_
+#define D2TM_GAMEFACTORY_H_
 
 #include "GameConfiguration.h"
 #include "Game.h"
 #include "D2TMGame.h"
 
-class GameFactory {
+class D2TMGameFactory {
 	public:
 		D2TMGame * createGame(GameConfiguration * gameConfiguration);
 };
 
-#endif /* GAMEFACTORY_H_ */
+#endif
