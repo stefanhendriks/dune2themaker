@@ -16,6 +16,9 @@
 class Game {
 
 	public:
+		virtual void run() = 0;
+
+	protected:
 		// after each run in the game loop, handle the passed time by updating states of
 		// kinds of objects.
 		virtual void handlePassedTime() = 0;
