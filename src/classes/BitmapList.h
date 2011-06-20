@@ -1,6 +1,12 @@
 /*
  *  Bitmap List
  *  created by: Peter Gaal, 2011
+ *  this is a class which will store list of bitmaps
+ *  bitmaps will be used by other classes (like sprites)
+ *  from this list. It is effective to store only ony copy of bitmaps
+ *  in a memory. This list should be only on in system, so the class
+ *  is an inherited class from Singleton template.
+ *
  */
 
 #ifndef BITMAP_LIST_H
