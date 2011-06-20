@@ -17,12 +17,12 @@ public:
 	// default constructor
 	Sprite()
 	{ 
-		int m_BitmapIndex = -1;
+		m_BitmapIndex = -1;
 	}
 	// constructor with sprite index
 	Sprite(int Index)
 	{
-		int m_BitmapIndex = Index;
+		m_BitmapIndex = Index;
 	}
 	// destructor
 	virtual ~Sprite(){};

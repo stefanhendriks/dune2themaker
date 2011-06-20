@@ -3,6 +3,7 @@
 #include "SDL/SDL.h"
 #include "BitmapList.h"
 #include "Bitmap.h"
+#include "Singleton.h"
 
 AnimSprite::AnimSprite()
 {

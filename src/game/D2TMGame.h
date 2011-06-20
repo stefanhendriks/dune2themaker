@@ -1,6 +1,9 @@
 #ifndef D2TMGAME_H_
 #define D2TMGAME_H_
 
+#include <SDL/SDL.h>
+
+#include "Game.h"
 #include "GameConfiguration.h"
 #include "../timer/Timer.h"
 
@@ -22,10 +25,13 @@ class D2TMGame : public Game {
 		// get/set
 		GameConfiguration const * getGameConfiguration() { return gameConfiguration; }
 		void setTimer(Timer const * newTimer);
+		bool isPlaying() { return playing; }
 
 	private:
 		GameConfiguration const * gameConfiguration;
 		Timer const * timer;
+		SDL_Surface *screen;
+		bool playing;
 };
 
 #endif /* D2TMGAME_H_ */
