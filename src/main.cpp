@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+#include "game/GameConfiguration.h"
 #include "game/D2TMGame.h"
 #include "game/D2TMGameFactory.h"
 
@@ -10,19 +11,22 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-	// initialize SDL
+	// Initialize
 	SDL_Init(SDL_INIT_VIDEO);
 
 	D2TMGameFactory * d2tmGameFactory = new D2TMGameFactory();
-	D2TMGame * game = d2tmGameFactory->createGame(NULL); // TODO: pass a game configuration here by reading a game.cfg, or arguments, etc.
+	GameConfiguration * gameConfiguration = NULL; // TODO: get game configuration here by reading a game.cfg, or arguments, etc.
+	D2TMGame * game = d2tmGameFactory->createGame(gameConfiguration);
 
-	while (game->isPlaying()) {
-		game->handlePassedTime();
-		game->handleEvents();
-		game->render();
+	if (game) {
+		game->run();
+	} else {
+		cerr << "Error launching Dune 2 - The Maker.";
 	}
 
-	// quit
+	// Clean up and shut down
+	delete game;
+	delete d2tmGameFactory;
 	SDL_Quit();
 	return 0;
 }

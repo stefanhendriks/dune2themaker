@@ -12,6 +12,14 @@ class D2TMGame : public Game {
 		D2TMGame(GameConfiguration const * startingGameConfiguration);
 		virtual ~D2TMGame();
 
+		void run();
+
+		// get/set
+		GameConfiguration const * getGameConfiguration() { return gameConfiguration; }
+		void setTimer(Timer const * newTimer);
+		bool isPlaying() { return playing; }
+
+	protected:
 		// after each run in the game loop, handle the passed time by updating states of
 		// kinds of objects.
 		void handlePassedTime();
@@ -21,11 +29,6 @@ class D2TMGame : public Game {
 
 		// render the game state
 		void render();
-
-		// get/set
-		GameConfiguration const * getGameConfiguration() { return gameConfiguration; }
-		void setTimer(Timer const * newTimer);
-		bool isPlaying() { return playing; }
 
 	private:
 		GameConfiguration const * gameConfiguration;

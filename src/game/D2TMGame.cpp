@@ -18,6 +18,15 @@ D2TMGame::~D2TMGame() {
   SDL_FreeSurface(screen);
 }
 
+void D2TMGame::run() {
+	while (isPlaying()) {
+		handlePassedTime();
+		handleEvents();
+		render();
+	}
+}
+
+
 void D2TMGame::handlePassedTime() {
 
 }
