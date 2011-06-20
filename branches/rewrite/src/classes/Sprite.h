@@ -24,6 +24,8 @@ public:
 	{
 		int m_BitmapIndex = Index;
 	}
+	// destructor
+	virtual ~Sprite(){};
 	// set Bitmap Index
 	void SetIndex(int Index)
 	{
