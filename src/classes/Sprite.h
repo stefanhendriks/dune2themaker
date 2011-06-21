@@ -10,18 +10,15 @@
 #define SPRITE_H
 
 #include "SDL/SDL.h"
+#include "BitmapList.h"
 
 class Sprite
 {
 public:
-	// default constructor
-	Sprite()
+	// default constructor, possible to use bitmap index parameter
+	Sprite(int Index = -1)
 	{ 
-		m_BitmapIndex = -1;
-	}
-	// constructor with sprite index
-	Sprite(int Index)
-	{
+		m_BitmapListContainer = BitmapList::GetInstance();
 		m_BitmapIndex = Index;
 	}
 	// destructor
@@ -47,6 +44,7 @@ public:
 protected:
 	int m_BitmapIndex;		// index of bitmap what we use 
 	int m_xpos, m_ypos;     // x and y position of sprite
+	BitmapList* m_BitmapListContainer;
 };
 
 
