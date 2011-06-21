@@ -55,7 +55,7 @@ void AnimSprite::Render(SDL_Surface *Target)
 	srcrect.y = Frame->y;
 	srcrect.w = Frame->w;
 	srcrect.h = Frame->h;
-	BitmapList::GetInstance()->GetBitmap(m_BitmapIndex)->Render(Target, m_xpos, m_ypos, &srcrect);
+	m_BitmapListContainer->GetBitmap(m_BitmapIndex)->Render(Target, m_xpos, m_ypos, &srcrect);
 }
 
 AnimSprite::~AnimSprite()
