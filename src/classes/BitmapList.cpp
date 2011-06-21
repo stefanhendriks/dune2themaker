@@ -10,7 +10,6 @@
 #include "assert.h"
 #include "Singleton.h"
 
-template<class C>
 DefSingleton(BitmapList);
 
 BitmapList::BitmapList()
