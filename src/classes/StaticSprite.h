@@ -25,7 +25,7 @@ public:
 	              // render
 	/* virtual */ void Render(SDL_Surface *Target)
 	{
-		BitmapList::GetInstance()->GetBitmap(m_BitmapIndex)->Render(Target, m_xpos, m_ypos);
+		m_BitmapListContainer->GetBitmap(m_BitmapIndex)->Render(Target, m_xpos, m_ypos);
 	}
 };
 
