@@ -1,3 +1,10 @@
+/*
+ *  Animated Sprite class
+ *  created by: Peter Gaal, 2011
+ *
+ *  this is an animated sprite class implementation
+ */
+
 
 #include "AnimSprite.h"
 #include "SDL/SDL.h"
