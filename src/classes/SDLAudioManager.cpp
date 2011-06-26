@@ -22,7 +22,7 @@ void SDLMixCallBack(void *userdata, Uint8 *stream, int len)
 SDLAudioManager::SDLAudioManager()
 {
 	// audio system not initialized
-	m_AudioSystemInitialized = 0;
+	m_AudioSystemInitialized = false;
 
 	// clear sample array
 	for (int i=0; i<MAX_SOUND_CHANNELS; i++)
@@ -73,10 +73,10 @@ void SDLAudioManager::StartSoundSystem()
 		return;
 	/* Set 16-bit stereo audio at 22Khz */
 	SDL_AudioSpec fmt;
-	fmt.freq = 22050;
+	fmt.freq = 44100;
 	fmt.format = AUDIO_S16;
 	fmt.channels = 2;
-	fmt.samples = 512;        /* A good value for games */
+	fmt.samples = 1024;        /* A good value for games */
 	fmt.callback = SDLMixCallBack;
 	fmt.userdata = (void *) this;
 	if ( SDL_OpenAudio(&fmt, &m_AudioFormat) < 0 ) {
@@ -158,7 +158,7 @@ void SDLAudioManager::PlaySound(int Index)
 	// if we didn't found a free channel
 	if ( ChannelFound == -1 )
 	{
-		printf("unable to play sound, no free entry in sound table\n");
+		fprintf(stderr, "unable to play sound, no free entry in sound table\n");
 		return;
 	}
 
