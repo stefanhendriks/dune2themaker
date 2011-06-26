@@ -21,9 +21,15 @@
 enum Sounds
 {
 	SND_BEGIN = 0,
-	SND_ACKNOWLEDGED,
+	SND_ACKNOWLEDGED = 0,
 	SND_AFFIRMATIVE,
 	SND_END
+};
+
+enum Music
+{
+	MUS_BEGIN =0,
+	MUS_END
 };
 
 
