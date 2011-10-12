@@ -26,11 +26,21 @@ Coming paragraphs; a quick summary of versions. Then for each next planned versi
 || Next public stable || *0.5* || 
 
 
-===Goals 0.5===
+===Version 0.5===
+Goal: Deliver a stable game, which offers skirmish mode only.
+User stories:
+|| Issue || User story ||
+|| issue 46 || As a player I should be able to play a skirmish game, so that the game is playable ||
 
 
 ===Goals 0.6===
 TBD.
 
+
 ===Goals 0.7===
 TBD.
+
+
+
+===Vocabulary===
+TBD = To Be Determined
