@@ -1,7 +1,7 @@
-#summary RoadMap.
+#summary Roadmap / Schedule
 #labels Phase-Implementation
 
-|| *Last Update* || 12 Oktober 2011 ||
+|| *Last Update* || 12 October 2011 ||
 || *Maintainer(s)* || Stefan Hendriks ||
 || *Status* || Concept ||
 || *Audience* || All ||
@@ -9,7 +9,7 @@
 
 == Purpose ==
 
-This page describes the development roadmap of Dune II - The Maker. This roadmap is determined by [User-Stories]. 
+This page describes the development roadmap of Dune II - The Maker. This roadmap is determined by [UserStories]. 
 
 == Roadmap ==
 
@@ -17,7 +17,7 @@ Note, the last public stable released was versioned as a DEMO. Next versions wil
 
 The goal is to have a public stable version for whenever a new version (upping MINOR) is created. All development within the MINOR is number within PATCH. Meaning, the current unstable version is legally named 0.4.6. The next aimed stable version is 0.5
 
-Coming paragraphs; a quick summary of versions. Then for each next planned version the goals set. These goals are taken from the [User-Stories].
+Coming paragraphs; a quick summary of versions. Then for each next planned version the goals set. These goals are taken from the [UserStories].
 
 ===Versions===
 || Release type || Version ||
