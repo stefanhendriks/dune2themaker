@@ -8,13 +8,14 @@ Skirmish mode is a campaign/story free mode where the player is able to play aga
 This specification describes all relevant information regarding setting up a skirmish game, as well describe several game rules. Not all game rules are written down explicitly, as they are written in the [TheRulesOfEngagement] page.
 
 Skirmish mode involves a few steps:
-* Set up a skirmish game
-* Playing the game
-* Winning/Losing the game
+<wiki:toc max_depth="3" />
 
-= Details =
+= Set up a skirmish game =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+
+
+= Playing a skirmish game =
+
+
+
+= Winning/Losing the game =
