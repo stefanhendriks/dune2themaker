@@ -19,12 +19,12 @@ The skirmish mode menu can only be reached from the main menu. The main menu off
 
 === Skirmish mode menu layout ===
 
-# Selected map to play
-# Amount of players
-## Amount of starting money
-## Team
-## Difficulty (easy, medium, hard?)
-# TBD: Selecting a new map
+  # Selected map to play
+  # Amount of players
+    # Amount of starting money
+    # Team
+    # Difficulty (easy, medium, hard?)
+  # TBD: Selecting a new map
 
 
 == Playing a skirmish game ==
