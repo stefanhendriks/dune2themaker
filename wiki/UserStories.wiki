@@ -14,7 +14,7 @@ As a <role> I can/should <feature> so that <reason>
 
 || Issue || User story ||
 || || As a player I should be able to play a skirmish game, so that the game is playable ||
-|| || As a player I should be able to play campaign mode, so that I can (re)play the original story line
+|| || As a player I should be able to play campaign mode, so that I can (re)play the original story line ||
 || || As a player I should be able to save and load the game, so I can return and play later ||
 || || As a player I can see my scores so that when I win the game I am presented on how well I did ||
 || || As a player I can use my super weapons so that I can win the game ||
