@@ -1,30 +1,36 @@
-#summary Detailed RoadMap and Milestone/Phase status.
+#summary RoadMap.
 #labels Phase-Implementation
 
-|| *Last Update* || 2 Jan 2009 ||
-|| *Maintainer(s)* || Richard de Jong (rdejong81) ||
-|| *Status* || Proposal ||
-|| *Audience* || Developers ||
+|| *Last Update* || 12 Oktober 2011 ||
+|| *Maintainer(s)* || Stefan Hendriks ||
+|| *Status* || Concept ||
+|| *Audience* || All ||
 || || Public Domain ||
 
 == Purpose ==
 
-This page will describe in detail every aspect of the road that the project is following according to our [Goals].
-
-== Status ==
-
-|| *Trunk Status* || Locked, work directed to branches ||
-|| *Feature assignment* || Accepted for 0.0.1 and beyond ||
-|| *Project Cycle state(s)* || "1.1 Feature assignment" for 0.0.1 ||
-|| *Release status* || Phase 0.0.1 has not qualified as of yet || 
+This page describes the development roadmap of Dune II - The Maker. This roadmap is determined by [User Stories]. 
 
 == Roadmap ==
 
-The cycle state refers to the development cycle as defined in our [Goals] page.
+Note, the last public stable released was versioned as a DEMO. Next versions will be using the known MAJOR.MINOR.PATCH version numbering. 
 
-|| *Milestone* || *Phase* || *Features* || *Maintainer(s)* || *Branchname* || *Cycle state* ||
-|| || 0.0.1 || Essentials || || - || 1.1 ||
-|| || || Project Wiki documentation push || rdejong81 || - ||
-|| || || Resolving License Issues || - || - ||
-|| || 0.0.2 || Improvements || || - || - ||
-|| 0.1.0 || || Minimal working version with networking support || - || - || - ||
+The goal is to have a public stable version for whenever a new version (upping MINOR) is created. All development within the MINOR is number within PATCH. Meaning, the current unstable version is legally named 0.4.6. The next aimed stable version is 0.5
+
+Coming paragraphs; a quick summary of versions. Then for each next planned version the goals set. These goals are taken from the [User Stories].
+
+===Versions===
+|| Release type || Version ||
+|| Current public stable || *DEMO 4* ||
+|| Current public unstable  || *Version 0.4.6* ||
+|| Next public stable || *0.5* || 
+
+
+===Goals 0.5===
+
+
+===Goals 0.6===
+TBD.
+
+===Goals 0.7===
+TBD.
