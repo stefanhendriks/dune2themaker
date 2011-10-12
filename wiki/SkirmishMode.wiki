@@ -1,10 +1,16 @@
 #summary Specification of the skirmish mode
 #labels Phase-Implementation
 
-= Introduction =
+= Skirmish mode =
 
-Add your content here.
+Skirmish mode is a campaign/story free mode where the player is able to play against other AI opponents. 
 
+This specification describes all relevant information regarding setting up a skirmish game, as well describe several game rules. Not all game rules are written down explicitly, as they are written in the [TheRulesOfEngagement] page.
+
+Skirmish mode involves a few steps:
+* Set up a skirmish game
+* Playing the game
+* Winning/Losing the game
 
 = Details =
 
