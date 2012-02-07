@@ -5,10 +5,18 @@ SOURCES=gamerules.cpp main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=d2tm
 
-all: $(SOURCES)	$(EXECUTABLE)	
+all:	clean	setup	$(SOURCES)	$(EXECUTABLE)	
+
+setup:
+	mkdir bin
+	mkdir obj
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ -lmingw32 -lSDLmain -lSDL -mwindows 
+	$(CC) $(LDFLAGS) $(OBJECTS) -o obj/$@ -lmingw32 -lSDLmain -lSDL -mwindows 
 
 .cpp.o:
-	$(CC) $(CFLAGS) $< -o $@ -I . 
+	$(CC) $(CFLAGS) $< -o obj/$@ -I . 
+
+clean:
+	rm -rf bin
+	rm -rf obj
