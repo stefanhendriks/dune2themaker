@@ -5,18 +5,11 @@ SOURCES=gamerules.cpp main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=d2tm
 
-all:	clean	setup	$(SOURCES)	$(EXECUTABLE)	
 
-setup:
-	mkdir bin
-	mkdir obj
+clean:	clean-main	clean-test
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o obj/$@ -lmingw32 -lSDLmain -lSDL -mwindows 
+clean-main:
+	rm -rf bin\main
 
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o obj/$@ -I . 
-
-clean:
-	rm -rf bin
-	rm -rf obj
+clean-test:
+	rm -rf bin\test
