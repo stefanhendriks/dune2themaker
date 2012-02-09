@@ -16,7 +16,7 @@ copy-resources:
 	cp -R $(RESOURCES)/ $(BIN)
 
 compile: clean-main prepare-main
-	$(CC) $(SRC)/*.cpp -I$(INCLUDE) -o $(BIN)/d2tm -lmingw32 -lSDLmain -lSDL -mwindows $(CFLAGS)
+	$(CC) $(SRC)/*.cpp -I$(INCLUDE) -o $(BIN)/d2tm -lmingw32 -lSDLmain -lSDL $(CFLAGS)
 
 clean:	clean-main	clean-test
 
