@@ -1,11 +1,17 @@
 CC=g++
 CFLAGS=-Wall
 
+# MAIN properties
 SRC=src/main
 INCLUDE=src/include
 BIN=bin/main
 RESOURCES=src/main/resources
 LIB=lib
+
+# TEST properties
+SRC_TEST=src/test
+BIN_TEST=bin/test
+RESOURCES_TEST=src/test/resources
 
 all: clean compile copy-resources copy-libraries
 
@@ -18,6 +24,9 @@ copy-resources:
 compile: clean-main prepare-main
 	$(CC) $(SRC)/*.cpp -I$(INCLUDE) -o $(BIN)/d2tm -lmingw32 -lSDLmain -lSDL $(CFLAGS)
 
+test: clean-test prepare-test
+	$(CC) $(SRC_TEST)/*.cpp -I$(INCLUDE) -o $(BIN_TEST)/tests $(CFLAGS)
+
 clean:	clean-main	clean-test
 
 clean-main:
@@ -28,3 +37,6 @@ prepare-main:
 
 clean-test:
 	rm -rf bin\test
+
+prepare-test:
+	mkdir bin\test
