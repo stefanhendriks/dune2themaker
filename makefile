@@ -7,7 +7,7 @@ BIN=bin/main
 RESOURCES=src/main/resources
 LIB=lib
 
-all: compile copy-resources copy-libraries
+all: clean compile copy-resources copy-libraries
 
 copy-libraries:
 	cp $(LIB)/*.* $(BIN)
