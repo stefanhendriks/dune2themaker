@@ -50,6 +50,10 @@ void Game::render() {
 
 }
 
+void Game::shutdown() {
+	SDL_Quit();
+}
+
 int Game::execute() {
 	if (init() != 0) {
 		return -1;
@@ -60,6 +64,8 @@ int Game::execute() {
 		update();
 		render();
 	}
+
+	shutdown();
 
 	return 0;
 }
