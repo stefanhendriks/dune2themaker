@@ -1,5 +1,3 @@
-#include <SDL/SDL.h>   /* All SDL App's need this */
-
 #include "gamerules.h"
 #include "game.h"
 
@@ -16,19 +14,52 @@ void Game::evaluateGameOfLifeRulesWithNeighbourCount(int neighbours) {
 	cout << "DONE Evaluating rules with [" << neighbours << "] neighbours" << endl;
 }
 
-
-int Game::execute() {
+int Game::init() {
 	if((SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO)==-1)) { 
         	printf("Could not initialize SDL: %s.\n", SDL_GetError());
-	        exit(-1);
+	        return -1;
 	}
 
-	cout << "Conway's Game Of Life" << endl;
-	evaluateGameOfLifeRulesWithNeighbourCount(1);
-	evaluateGameOfLifeRulesWithNeighbourCount(2);
-	evaluateGameOfLifeRulesWithNeighbourCount(3);
-	evaluateGameOfLifeRulesWithNeighbourCount(4);
-	evaluateGameOfLifeRulesWithNeighbourCount(5);
+	screen = SDL_SetVideoMode(640, 480, 16, SDL_SWSURFACE);
+	if ( screen == NULL ) {
+		printf("Unable to set 640x480 video: %s\n", SDL_GetError());
+		return -1;
+	}
+	
 	return 0;
+}
 
+void Game::handleEvents() {
+	SDL_Event event;
+	while (SDL_PollEvent(&event)) {
+		onEvent(&event);
+	}
+}
+
+void Game::onEvent(SDL_Event * event) {
+	if(event->type == SDL_QUIT) {
+		running = false;
+	}
+}
+
+void Game::update() {
+
+}
+
+void Game::render() {
+
+}
+
+int Game::execute() {
+	if (init() != 0) {
+		return -1;
+	}
+
+	while (running) {
+		handleEvents();
+		update();
+		render();
+	}
+
+	return 0;
 }
