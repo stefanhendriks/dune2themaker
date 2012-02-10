@@ -5,14 +5,6 @@
 
 using namespace std;
 
-void Game::evaluateGameOfLifeRulesWithNeighbourCount(int neighbours) {
-	GameRules gamerules;
-	cout << "Evaluating rules with [" << neighbours << "] neighbours -- Start" << endl;
-	cout << "With " << neighbours << " shouldRemainAlive returns " << gamerules.shouldRemainAlive(neighbours) << endl;
-	cout << "With " << neighbours << " shouldRevive returns " << gamerules.shouldRevive(neighbours) << endl;
-	cout << "With " << neighbours << " shouldDie returns " << gamerules.shouldDie(neighbours) << endl;
-	cout << "DONE Evaluating rules with [" << neighbours << "] neighbours" << endl;
-}
 
 int Game::init() {
 	if((SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO)==-1)) { 
@@ -25,7 +17,10 @@ int Game::init() {
 		printf("Unable to set 640x480 video: %s\n", SDL_GetError());
 		return -1;
 	}
-	
+
+	// load resources
+	mouse = surfaceDao.load("resources/images/MS_Normal.bmp");
+
 	return 0;
 }
 
@@ -47,10 +42,18 @@ void Game::update() {
 }
 
 void Game::render() {
+	int mouseX, mouseY;
+    SDL_GetMouseState(&mouseX, &mouseY); 
 
+	surfaceDrawer.draw(mouse, screen, mouseX, mouseY);
+
+	// flip screen at the end
+	SDL_Flip(screen); 
 }
 
 void Game::shutdown() {
+	SDL_FreeSurface(mouse);
+
 	SDL_Quit();
 }
 
