@@ -1,14 +1,15 @@
-#include "surface.h"
+#include "surfacedao.h"
 
-Surface::Surface() {
-	// empty constructor
-}
+#include <iostream>
 
-SDL_Surface * Surface::load(char * file) {
+using namespace std;
+
+SDL_Surface * SurfaceDao::load(char * file) {
     SDL_Surface * temp = NULL;
     SDL_Surface * result = NULL;
  
     if((temp = SDL_LoadBMP(file)) == NULL) {
+    	cout << "Failed to load [" << file << "]." << endl;
         return NULL;
     }
  
@@ -17,6 +18,4 @@ SDL_Surface * Surface::load(char * file) {
  
     return result;
 }
-
-
 

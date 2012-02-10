@@ -1,13 +1,15 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <SDL/SDL.h>   /* All SDL App's need this */
+#include <SDL/SDL.h>
+
+#include "surfacedao.h"
+#include "surfacedrawer.h"
 
 class Game {
 
 	public:
 		int execute();
-		void evaluateGameOfLifeRulesWithNeighbourCount(int neighbours);
 
 	private:
 		bool running;
@@ -23,6 +25,12 @@ class Game {
 
 		
 		SDL_Surface * screen;
+
+		SDL_Surface * mouse;
+
+	// Dependencies
+		SurfaceDao surfaceDao;
+		SurfaceDrawer surfaceDrawer;
 
 };
 
