@@ -13,3 +13,8 @@ void SurfaceDrawer::draw(SDL_Surface * from, SDL_Surface * dest, int x, int y) {
 	SDL_BlitSurface(from, NULL, dest, &rect);
 }
 
+void SurfaceDrawer::clearToColor(SDL_Surface * target, Uint32 color) {
+	if (target == NULL) return;
+	SDL_FillRect (target, NULL, color); 	
+}
+
