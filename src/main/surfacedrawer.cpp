@@ -10,6 +10,9 @@ void SurfaceDrawer::draw(SDL_Surface * from, SDL_Surface * dest, int x, int y) {
 	rect.x = x;
 	rect.y = y;
 
+	// SDL Docs say:
+	// int SDL_BlitSurface(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface *dst, SDL_Rect *dstrect);
+	// only X and Y will be used in dstrect (width and height skipped).
 	SDL_BlitSurface(from, NULL, dest, &rect);
 }
 
