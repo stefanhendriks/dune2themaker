@@ -1,5 +1,6 @@
 #include "gamerules.h"
 #include "game.h"
+#include "colors.h"
 
 #include <iostream>
 
@@ -42,6 +43,8 @@ void Game::update() {
 }
 
 void Game::render() {
+	surfaceDrawer.clearToColor(screen, Colors::black(screen));
+
 	int mouseX, mouseY;
     SDL_GetMouseState(&mouseX, &mouseY); 
 
