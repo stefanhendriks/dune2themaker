@@ -48,7 +48,7 @@ void Game::render() {
 	int mouseX, mouseY;
     SDL_GetMouseState(&mouseX, &mouseY); 
 
-	surfaceDrawer.draw(mouse, screen, mouseX, mouseY);
+	surfaceDrawer.drawTransparant(mouse, screen, mouseX, mouseY);
 
 	// flip screen at the end
 	SDL_Flip(screen); 
