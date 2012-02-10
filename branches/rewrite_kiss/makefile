@@ -13,7 +13,9 @@ SRC_TEST=src/test
 BIN_TEST=bin/test
 RESOURCES_TEST=src/test/resources
 
-all: clean compile copy-resources copy-libraries
+all: clean compile compile-test copy-resources copy-libraries
+
+bin: clean compile copy-resources copy-libraries
 
 copy-libraries:
 	cp $(LIB)/*.* $(BIN)
@@ -24,7 +26,7 @@ copy-resources:
 compile: clean-main prepare-main
 	$(CC) $(SRC)/*.cpp -I$(INCLUDE) -o $(BIN)/d2tm -lmingw32 -lSDLmain -lSDL $(CFLAGS)
 
-test: clean-test prepare-test
+compile-test: clean-test prepare-test
 	$(CC) $(SRC_TEST)/*.cpp -I$(INCLUDE) -o $(BIN_TEST)/tests $(CFLAGS)
 
 clean:	clean-main	clean-test
