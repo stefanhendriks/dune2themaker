@@ -16,6 +16,26 @@ void SurfaceDrawer::draw(SDL_Surface * from, SDL_Surface * dest, int x, int y) {
 	SDL_BlitSurface(from, NULL, dest, &rect);
 }
 
+void SurfaceDrawer::draw(SDL_Surface * from, SDL_Surface * dest, int fromX, int fromY, int width, int height, int x, int y) {
+	if(from == NULL || dest == NULL) {
+		return;
+	}
+ 
+	SDL_Rect rect;
+	rect.x = x;
+	rect.y = y;
+
+	SDL_Rect fromRect;
+
+	fromRect.x = fromX;
+	fromRect.y = fromY;
+	fromRect.w = width;
+	fromRect.h = height;
+
+	SDL_BlitSurface(from, &fromRect, dest, &rect);
+}
+
+
 void SurfaceDrawer::drawTransparant(SDL_Surface * from, SDL_Surface * dest, int x, int y) {
  	Uint32 colorkey = SDL_MapRGB(from->format, 255, 0, 255);
     SDL_SetColorKey(from, SDL_SRCCOLORKEY, colorkey);
