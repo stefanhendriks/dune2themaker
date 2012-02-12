@@ -2,7 +2,7 @@ CC=g++
 CFLAGS=-Wall
 
 # MAIN properties
-SRC=src/main
+SRC=src/main/cpp
 INCLUDE=src/include
 BIN=bin/main
 RESOURCES=src/main/resources
