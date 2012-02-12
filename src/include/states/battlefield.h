@@ -2,6 +2,7 @@
 #define GAMESTATE_BATTLEFIELD_H
 
 #include "gamestate.h"
+#include "tileset.h"
 
 class BattleField : public GameState {
 	
@@ -20,6 +21,7 @@ class BattleField : public GameState {
 
 	private:
 		SDL_Surface * test;
+		Tileset * tileset;
 };
 
 
