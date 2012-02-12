@@ -27,8 +27,11 @@ Tileset::Tileset(SDL_Surface * surface, int tileWidth, int tileHeight) {
 
 	this->maxTilesWidth = (surface->w / tileWidth);
 	this->maxTilesHeight = (surface->h / tileHeight);
-	cout << "Tileset constructed with maxTilesWidth[" << maxTilesWidth;
-	cout << "], maxTilesHeight[" << maxTilesHeight << "]";
+	
+	cout << "Tileset constructed with surface of [" << surface->w << "X" << surface->h << "]";
+	cout << ". Using a tile size of [" << tileWidth << "X" << tileHeight << "]";
+	cout << " resulting in a tileset with dimensions [" << maxTilesWidth << "X" << maxTilesHeight << "]";
+	cout << endl;
 }
 
 SDL_Rect Tileset::get(int index) {
