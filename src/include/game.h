@@ -21,10 +21,16 @@ class Game {
 			this->gameState = gameState;
 		};
 
+		void setScreen(SDL_Surface * screen) {
+			this->screen = screen;
+		}
+		
+		int init();
+
 	private:
 		bool running;
 
-		int init();
+
 		void shutdown();
 
 		void handleEvents();
@@ -32,7 +38,6 @@ class Game {
 		void render();
 
 		void onEvent(SDL_Event * event);
-
 		
 		SDL_Surface * screen;
 

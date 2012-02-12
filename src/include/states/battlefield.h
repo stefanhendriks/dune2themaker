@@ -6,6 +6,10 @@
 class BattleField : public GameState {
 	
 	public:
+		BattleField();
+
+		int init();
+
 		void handleEvents();
 		void update();
 		void render();
@@ -13,6 +17,9 @@ class BattleField : public GameState {
 		void onEvent(SDL_Event * event);
 
 		void shutdown();
+
+	private:
+		SDL_Surface * test;
 };
 
 
