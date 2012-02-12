@@ -6,9 +6,11 @@
 class Tileset {
 
 	public:
-		~Tileset();		
+		~Tileset();
 		Tileset(SDL_Surface * surface, int tileWidth, int tileHeight);
 		
+		void init(int surfaceWidth, int surfaceHeight);
+
 		SDL_Rect get(int index);
 		SDL_Rect get(int x, int y);
 
