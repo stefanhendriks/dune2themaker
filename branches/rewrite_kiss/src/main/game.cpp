@@ -6,6 +6,12 @@
 
 using namespace std;
 
+Game::Game() {
+	gameState = NULL;
+}
+
+Game::~Game() {
+}
 
 int Game::init() {
 	if((SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO)==-1)) { 
@@ -32,24 +38,30 @@ void Game::handleEvents() {
 	while (SDL_PollEvent(&event)) {
 		onEvent(&event);
 	}
+
+	if (gameState)	gameState->handleEvents();
 }
 
 void Game::onEvent(SDL_Event * event) {
 	if(event->type == SDL_QUIT) {
 		running = false;
 	}
+
+	if (gameState)	gameState->onEvent(event);
 }
 
 void Game::update() {
-
+	if (gameState)	gameState->update();
 }
 
 void Game::render() {
 	surfaceDrawer.clearToColor(screen, Colors::black(screen));
 
-	int mouseX, mouseY;
-    SDL_GetMouseState(&mouseX, &mouseY); 
+	if (gameState)	gameState->render();
 
+	// draw mouse (always for now)
+	int mouseX, mouseY;
+	SDL_GetMouseState(&mouseX, &mouseY); 
 	surfaceDrawer.drawTransparant(mouse, screen, mouseX, mouseY);
 
 	// flip screen at the end
@@ -57,8 +69,10 @@ void Game::render() {
 }
 
 void Game::shutdown() {
-	SDL_FreeSurface(mouse);
+	if (gameState)	gameState->shutdown();
+	delete gameState;
 
+	SDL_FreeSurface(mouse);
 	SDL_Quit();
 }
 
