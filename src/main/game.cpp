@@ -19,6 +19,8 @@ int Game::init() {
 		return -1;
 	}
 
+	SDL_ShowCursor(0); 
+
 	// load resources
 	mouse = surfaceDao.load("resources/images/MS_Normal.bmp");
 
