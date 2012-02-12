@@ -1,5 +1,10 @@
 #include "gamestate.h"
 
+int GameState::init() {
+	// pure virtual
+	return 0;
+}
+
 void GameState::handleEvents() {
 	// pure virtual
 }

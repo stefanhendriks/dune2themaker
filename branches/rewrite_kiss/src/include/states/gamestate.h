@@ -6,6 +6,8 @@
 class GameState {
 
 	public:
+		virtual int init();
+
 		virtual void handleEvents();
 		virtual void update();
 		virtual void render();
@@ -13,6 +15,15 @@ class GameState {
 		virtual void onEvent(SDL_Event * event);
 
 		virtual void shutdown();
+
+		void setScreen(SDL_Surface * screen) {
+			this->screen = screen;
+		};
+
+	protected:
+		SDL_Surface * screen;
+
+	private:
 
 };
 

@@ -13,19 +13,6 @@ Game::~Game() {
 }
 
 int Game::init() {
-	if((SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO)==-1)) { 
-        	printf("Could not initialize SDL: %s.\n", SDL_GetError());
-	        return -1;
-	}
-
-	screen = SDL_SetVideoMode(640, 480, 16, SDL_SWSURFACE);
-	if ( screen == NULL ) {
-		printf("Unable to set 640x480 video: %s\n", SDL_GetError());
-		return -1;
-	}
-
-	SDL_ShowCursor(0); 
-
 	// load resources
 	mouse = surfaceDao.load("resources/images/MS_Normal.bmp");
 
