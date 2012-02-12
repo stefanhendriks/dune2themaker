@@ -9,7 +9,7 @@ RESOURCES=src/main/resources
 LIB=lib
 
 # TEST properties
-SRC_TEST=src/test
+SRC_TEST=src/test/cpp
 BIN_TEST=bin/test
 RESOURCES_TEST=src/test/resources
 
