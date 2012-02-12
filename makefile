@@ -24,7 +24,7 @@ copy-resources:
 	cp -R $(RESOURCES)/ $(BIN)
 
 compile: clean-main prepare-main
-	$(CC) $(SRC)/*.cpp $(SRC)/domain/*.cpp -I$(INCLUDE) -I$(INCLUDE)/domain -o $(BIN)/d2tm -lmingw32 -lSDLmain -lSDL $(CFLAGS)
+	$(CC) $(SRC)/*.cpp $(SRC)/domain/*.cpp $(SRC)/states/*.cpp -I$(INCLUDE) -I$(INCLUDE)/domain -I$(INCLUDE)/states -o $(BIN)/d2tm -lmingw32 -lSDLmain -lSDL $(CFLAGS)
 
 compile-test: clean-test prepare-test
 	$(CC) $(SRC_TEST)/*.cpp -I$(INCLUDE) -o $(BIN_TEST)/tests $(CFLAGS)

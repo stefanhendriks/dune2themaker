@@ -5,11 +5,21 @@
 
 #include "surfacedao.h"
 #include "surfacedrawer.h"
+#include "states/gamestate.h"
 
 class Game {
 
 	public:
+		Game();
+		~Game();
+
 		int execute();
+
+
+		// setters
+		void setGameState(GameState * gameState) {
+			this->gameState = gameState;
+		};
 
 	private:
 		bool running;
@@ -28,10 +38,10 @@ class Game {
 
 		SDL_Surface * mouse;
 
-	// Dependencies
+		// Dependencies
 		SurfaceDao surfaceDao;
 		SurfaceDrawer surfaceDrawer;
-
+		GameState * gameState;
 };
 
 #endif

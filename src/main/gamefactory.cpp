@@ -3,7 +3,8 @@
 Game GameFactory::create() {
 	Game game;
 
-	// TODO: load resources for game
+	GameState * gameState = new BattleField();
+	game.setGameState(gameState);
 
 	return game;
 }
