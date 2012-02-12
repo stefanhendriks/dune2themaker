@@ -17,7 +17,8 @@ int BattleField::init() {
 	if (test == NULL) {
 		cerr << "Could not load MS_Normal.bmp" << endl;
 		return -1;
-	}	
+	}
+	return 0;	
 }
 
 void BattleField::handleEvents() {
