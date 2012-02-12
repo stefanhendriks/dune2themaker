@@ -25,7 +25,9 @@ int BattleField::init() {
 		cout << "tilesetSurface is NULL" << endl;
 		return -1;
 	}
+
 	this->tileset = new Tileset(tilesetSurface, 32, 32);
+
 	return 0;	
 }
 
@@ -41,8 +43,7 @@ void BattleField::render() {
 	SurfaceDrawer surfaceDrawer;
 	int mouseX, mouseY;
 	SDL_GetMouseState(&mouseX, &mouseY); 
-	//void draw(Tileset * tileSet, SDL_Surface * dest, int index, int x, int y);
-	surfaceDrawer.draw(tileset, screen, 0, mouseX + 50, mouseY + 50);
+	surfaceDrawer.draw(tileset, screen, 21, mouseX + 50, mouseY + 50);
 	//surfaceDrawer.drawTransparant(test, screen, mouseX + 50, mouseY + 50);
 }
 
