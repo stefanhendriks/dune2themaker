@@ -1,16 +1,47 @@
 #include "tileset.h"
 
+#include <iostream>
+
+using namespace std;
+
+Tileset::~Tileset() {
+	SDL_FreeSurface(tiledSurface);
+	tiledSurface = NULL;
+}
 
 Tileset::Tileset(SDL_Surface * surface, int tileWidth, int tileHeight) {
-	tiledSurface = NULL;
-	tileHeight = 0;
-	tileWidth = 0;
+	this->tiledSurface = NULL;
+	this->tileHeight = 0;
+	this->tileWidth = 0;
+	this->maxTilesWidth = 0;
+	this->maxTilesHeight = 0;
 
 	if (!surface) {
+		cout << "WARN: Tileset has no surface." << endl;
 		return;
 	}
 
 	tiledSurface = surface;
 	this->tileHeight = tileHeight;
 	this->tileWidth = tileWidth;
+
+	this->maxTilesWidth = (surface->w / tileWidth);
+	this->maxTilesHeight = (surface->h / tileHeight);
+	cout << "Tileset constructed with maxTilesWidth[" << maxTilesWidth;
+	cout << "], maxTilesHeight[" << maxTilesHeight << "]";
+}
+
+SDL_Rect Tileset::get(int index) {
+	int x = index % maxTilesWidth;
+	int y = (index / maxTilesWidth);
+	return get(x, y);
+}
+
+SDL_Rect Tileset::get(int x, int y) {
+	SDL_Rect rect;
+	rect.x = (x * tileWidth);
+	rect.y = (y * tileHeight);
+	rect.w = tileWidth;
+	rect.h = tileHeight;
+	return rect;
 }

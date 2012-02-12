@@ -1,6 +1,8 @@
 #ifndef SURFACEDRAWER_H
 #define SURFACEDRAWER_H
 
+#include "tileset.h"
+
 #include <SDL/SDL.h>
 
 class SurfaceDrawer {
@@ -10,6 +12,8 @@ class SurfaceDrawer {
 		void draw(SDL_Surface * from, SDL_Surface * dest, int fromX, int fromY, int width, int height, int x, int y);
 		void drawTransparant(SDL_Surface * from, SDL_Surface * to, int x, int y);
 		
+		void draw(Tileset * tileSet, SDL_Surface * dest, int index, int x, int y);
+
 		void clearToColor(SDL_Surface * target, Uint32 color);
 	
 };

@@ -8,6 +8,7 @@ using namespace std;
 
 BattleField::BattleField() {
 	test = NULL;
+	tileset = NULL;
 }
 
 int BattleField::init() {
@@ -15,9 +16,16 @@ int BattleField::init() {
 	SurfaceDao surfaceDao;
 	test = surfaceDao.load("resources/images/MS_Normal.bmp");
 	if (test == NULL) {
-		cerr << "Could not load MS_Normal.bmp" << endl;
+		cout << "Could not load MS_Normal.bmp" << endl;
 		return -1;
 	}
+
+	SDL_Surface * tilesetSurface = surfaceDao.load("resources/images/tileset_terrain.bmp");
+	if (tilesetSurface == NULL) {
+		cout << "tilesetSurface is NULL" << endl;
+		return -1;
+	}
+	this->tileset = new Tileset(tilesetSurface, 32, 32);
 	return 0;	
 }
 
@@ -33,7 +41,9 @@ void BattleField::render() {
 	SurfaceDrawer surfaceDrawer;
 	int mouseX, mouseY;
 	SDL_GetMouseState(&mouseX, &mouseY); 
-	surfaceDrawer.drawTransparant(test, screen, mouseX + 50, mouseY + 50);
+	//void draw(Tileset * tileSet, SDL_Surface * dest, int index, int x, int y);
+	surfaceDrawer.draw(tileset, screen, 0, mouseX + 50, mouseY + 50);
+	//surfaceDrawer.drawTransparant(test, screen, mouseX + 50, mouseY + 50);
 }
 
 void BattleField::onEvent(SDL_Event * event) {
@@ -43,4 +53,5 @@ void BattleField::onEvent(SDL_Event * event) {
 void BattleField::shutdown() {
 	// clean up resources for this game state
 	SDL_FreeSurface(test);
+	delete tileset;
 }

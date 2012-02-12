@@ -1,5 +1,21 @@
 #include "surfacedrawer.h"
 
+void SurfaceDrawer::draw(Tileset * tileSet, SDL_Surface * dest, int index, int x, int y) {
+	if (tileSet == NULL) {
+		return;	
+	}
+
+	SDL_Surface * from = tileSet->getSurface();
+	if (from == NULL) return;	
+	
+	// SDL_Rect rect = tileSet->get(index);
+
+	// SDL_Rect destRect;
+	// destRect.x = x;
+	// destRect.y = y;
+
+	// SDL_BlitSurface(from, &rect, dest, &destRect);
+}
 
 void SurfaceDrawer::draw(SDL_Surface * from, SDL_Surface * dest, int x, int y) {
 	if(from == NULL || dest == NULL) {
