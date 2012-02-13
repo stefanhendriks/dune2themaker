@@ -3,6 +3,7 @@
 
 #include "gamestate.h"
 #include "tileset.h"
+#include "map.h"
 
 class BattleField : public GameState {
 	
@@ -22,6 +23,7 @@ class BattleField : public GameState {
 	private:
 		SDL_Surface * test;
 		Tileset * tileset;
+		Map * map;
 };
 
 

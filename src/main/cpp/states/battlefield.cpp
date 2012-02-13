@@ -9,6 +9,11 @@ using namespace std;
 BattleField::BattleField() {
 	test = NULL;
 	tileset = NULL;
+
+	//
+	map = new Map(64, 64);
+	Cell * cell = map->getCell(0, 1); // equals cell 64
+	cell->setTile(24);
 }
 
 int BattleField::init() {
@@ -42,8 +47,11 @@ void BattleField::update() {
 void BattleField::render() {
 	SurfaceDrawer surfaceDrawer;
 	int mouseX, mouseY;
-	SDL_GetMouseState(&mouseX, &mouseY); 
-	surfaceDrawer.draw(tileset, screen, 40, mouseX + 50, mouseY + 50);
+	SDL_GetMouseState(&mouseX, &mouseY);
+	Cell * cell = map->getCell(0, 1); 
+	int tile = cell->getTile();
+	cout << "Cell has tile [" << tile << "]" << endl;
+	surfaceDrawer.draw(tileset, screen, tile, mouseX + 50, mouseY + 50);
 	//surfaceDrawer.drawTransparant(test, screen, mouseX + 50, mouseY + 50);
 }
 
