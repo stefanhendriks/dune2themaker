@@ -7,6 +7,10 @@ class Colors {
 			return SDL_MapRGB(surface->format, 0, 0, 0); 
 		}
 
+		static Uint32 purple(SDL_Surface * surface) {
+			return SDL_MapRGB(surface->format, 255, 0, 255); 
+		}
+
 };
 
 #endif
