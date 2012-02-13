@@ -42,7 +42,6 @@ void Tileset::init(int surfaceWidth, int surfaceHeight) {
 SDL_Rect Tileset::get(int index) {
 	int x = index % maxTilesWidth;
 	int y = (index / maxTilesWidth);
-	cout << "X,Y for index [" << index << "] is [" << x << "," << y << "]" << endl;
 	return get(x, y);
 }
 
