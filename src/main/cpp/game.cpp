@@ -14,7 +14,7 @@ Game::~Game() {
 
 int Game::init() {
 	// load resources
-	mouse = surfaceDao.load("resources/images/MS_Normal.bmp");
+	mouse = surfaceDao.load((char *)"resources/images/MS_Normal.bmp");
 
 	return 0;
 }

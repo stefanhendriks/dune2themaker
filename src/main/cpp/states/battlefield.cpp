@@ -14,13 +14,13 @@ BattleField::BattleField() {
 int BattleField::init() {
 	// load resources
 	SurfaceDao surfaceDao;
-	test = surfaceDao.load("resources/images/MS_Normal.bmp");
+	test = surfaceDao.load((char *)"resources/images/MS_Normal.bmp");
 	if (test == NULL) {
 		cout << "Could not load MS_Normal.bmp" << endl;
 		return -1;
 	}
 
-	SDL_Surface * tilesetSurface = surfaceDao.load("resources/images/tileset_terrain.bmp");
+	SDL_Surface * tilesetSurface = surfaceDao.load((char *)"resources/images/tileset_terrain.bmp");
 	if (tilesetSurface == NULL) {
 		cout << "tilesetSurface is NULL" << endl;
 		return -1;
@@ -43,7 +43,7 @@ void BattleField::render() {
 	SurfaceDrawer surfaceDrawer;
 	int mouseX, mouseY;
 	SDL_GetMouseState(&mouseX, &mouseY); 
-	surfaceDrawer.draw(tileset, screen, 21, mouseX + 50, mouseY + 50);
+	surfaceDrawer.draw(tileset, screen, 40, mouseX + 50, mouseY + 50);
 	//surfaceDrawer.drawTransparant(test, screen, mouseX + 50, mouseY + 50);
 }
 
