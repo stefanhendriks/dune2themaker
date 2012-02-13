@@ -48,10 +48,15 @@ void BattleField::render() {
 	SurfaceDrawer surfaceDrawer;
 	int mouseX, mouseY;
 	SDL_GetMouseState(&mouseX, &mouseY);
-	Cell * cell = map->getCell(0, 1); 
-	int tile = cell->getTile();
-	cout << "Cell has tile [" << tile << "]" << endl;
-	surfaceDrawer.draw(tileset, screen, tile, mouseX + 50, mouseY + 50);
+	for (int x = 0; x < 20; x++) {
+		for (int y = 0; y < 20; y++) {
+			Cell * cell = map->getCell(x, y);
+			int tile = cell->getTile();
+			surfaceDrawer.draw(tileset, screen, tile, x * 32, y * 32);		
+		}
+	}
+
+	
 	//surfaceDrawer.drawTransparant(test, screen, mouseX + 50, mouseY + 50);
 }
 
