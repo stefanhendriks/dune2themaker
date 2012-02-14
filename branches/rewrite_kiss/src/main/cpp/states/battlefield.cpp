@@ -25,10 +25,6 @@ int BattleField::init() {
 
 	mapDrawer->setTileset(this->tileset);
 
-	// 
-	Cell * cell = map->getCell(0, 1); // equals cell 64
-	cell->setTile(24);
-
 	return 0;
 }
 
