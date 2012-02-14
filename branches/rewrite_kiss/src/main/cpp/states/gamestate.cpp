@@ -21,7 +21,7 @@ void GameState::onKeyboardEvent(SDL_KeyboardEvent * key) {
 	// pure virtual
 }
 
-void GameState::onMouseEvent(SDL_Event * event) {
+void GameState::onMouseEvent(SDL_MouseButtonEvent * mouse) {
 	// pure virtual
 }
 

@@ -40,5 +40,9 @@ Cell * Map::getCell(int x, int y) {
 }
 
 Cell * Map::getCell(int index) {
+	if (index >= size || index < 0) {
+		cout << "Request for cell at index [" << index << "], while min is [0] and max is [" << size << "]. Dimensions are [" << height << "X" << width << "]" << endl;
+		return NULL;
+	}
 	return cells[index];
 }

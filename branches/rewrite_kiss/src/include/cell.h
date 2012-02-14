@@ -12,7 +12,7 @@ class Cell {
 	public:
 		Cell() { 
 			this->tile = 0;
-			this->terrainType = TerrainTypes::getSand();
+			this->terrainType = TERRAIN_SAND;
 		}
 
 		Cell(int tile) { 
@@ -25,12 +25,24 @@ class Cell {
 		}
 
 		// Getters
-		TerrainType getTerrainType() { 
+		TerrainTypes getTerrainType() { 
 			return terrainType; 
 		}
 
 		int getTile() {
 			return this->tile; 
+		}
+
+		bool isSand() {
+			return terrainType == TERRAIN_SAND;
+		}
+
+		bool isRock() {
+			return terrainType == TERRAIN_ROCK;
+		}
+
+		bool isSpice() {
+			return terrainType == TERRAIN_SPICE;
 		}
 
 	private:
@@ -39,7 +51,7 @@ class Cell {
 		
 
 		// properties of type of terrain
-		TerrainType terrainType;
+		TerrainTypes terrainType;
 
 };
 
