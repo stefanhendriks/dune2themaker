@@ -5,11 +5,14 @@
 #include "tileset.h"
 #include "map.h"
 
+#include "mapcamera.h"
+#include "mapdrawer.h"
+
 class BattleField : public GameState {
 	
 	public:
 		BattleField();
-
+		
 		int init();
 
 		void handleEvents();
@@ -20,10 +23,30 @@ class BattleField : public GameState {
 
 		void shutdown();
 
+		// setters
+		void setMapDrawer(MapDrawer * mapDrawer) {
+			this->mapDrawer = mapDrawer;
+		}
+
+		void setMapCamera(MapCamera * mapCamera) {
+			this->mapCamera = mapCamera;
+		}
+
+		void setMap(Map * map) {
+			this->map = map;
+		}
+
 	private:
-		SDL_Surface * test;
+
+		// resources
 		Tileset * tileset;
+
+		// state
 		Map * map;
+		MapCamera * mapCamera;
+
+		// dependencies
+		MapDrawer * mapDrawer;
 };
 
 

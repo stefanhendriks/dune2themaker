@@ -1,5 +1,14 @@
 #include "gamefactory.h"
 
+#include "gamestate.h"
+#include "battlefield.h"
+
+#include "map.h"
+#include "mapcamera.h"
+#include "mapdrawer.h"
+
+#include "settings.h"
+
 #include <iostream>
 
 using namespace std;
@@ -7,14 +16,18 @@ using namespace std;
 Game GameFactory::create() {
 	cout << "Initializing SDL..." << endl;
 
+	Settings settings;
+	settings.screenWidth = 800;
+	settings.screenHeight = 600;
+
 	if((SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO)==-1)) { 
 		printf("Could not initialize SDL: %s.\n", SDL_GetError());
 		exit(1);
 	}
 
-	SDL_Surface * screen = SDL_SetVideoMode(640, 480, 16, SDL_SWSURFACE);
+	SDL_Surface * screen = SDL_SetVideoMode(settings.screenWidth, settings.screenHeight, 16, SDL_SWSURFACE);
 	if ( screen == NULL ) {
-		printf("Unable to set 640x480 video: %s\n", SDL_GetError());
+		printf("Unable to set %dx%d video: %s\n", settings.screenWidth, settings.screenHeight, SDL_GetError());
 		exit(1);
 	}
 		
@@ -24,11 +37,23 @@ Game GameFactory::create() {
 
 	Game game;
 
-	GameState * gameState = new BattleField();
-	gameState->setScreen(screen);
-	gameState->init();
+	// TODO: create game state factory
+	BattleField * battleField = new BattleField();
+	battleField->setScreen(screen);
 
-	game.setGameState(gameState);
+	Map * map = new Map(64, 64);
+	battleField->setMap(map);
+
+	MapCamera * mapCamera = new MapCamera(0,0);
+	battleField->setMapCamera(mapCamera);
+
+	MapDrawer * mapDrawer = new MapDrawer(settings.screenWidth / 32, settings.screenHeight / 32);
+	battleField->setMapDrawer(mapDrawer);
+
+	battleField->init();
+
+
+	game.setGameState(battleField);
 	game.setScreen(screen);
 	
 	if (game.init() != 0) {
