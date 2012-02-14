@@ -13,6 +13,7 @@ class Map {
 
 		Cell * getCell(int x, int y);
 		Cell * getCell(int index);
+		int toCell(int x, int y);
 
 		int getWidth() { return width; }
 		int getHeight() { return height; }

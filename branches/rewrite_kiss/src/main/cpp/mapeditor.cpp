@@ -17,6 +17,7 @@ void MapEditor::setTile(int x, int y, int tile) {
 
 void MapEditor::smooth(int cell) {
 	map->getCell(cell);
+	cout << "Smooth at [" << cell << "]" << endl;
 }
 
 bool MapEditor::isTerrainType(int cell, TerrainTypes terrainType) {
