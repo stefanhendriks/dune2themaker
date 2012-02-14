@@ -14,6 +14,9 @@ class Map {
 		Cell * getCell(int x, int y);
 		Cell * getCell(int index);
 
+		int getWidth() { return width; }
+		int getHeight() { return height; }
+
 	private:
 		Cell ** cells;
 		int size;

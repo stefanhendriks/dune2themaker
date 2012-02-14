@@ -44,7 +44,7 @@ Game GameFactory::create() {
 	Map * map = new Map(64, 64);
 	battleField->setMap(map);
 
-	MapCamera * mapCamera = new MapCamera(0,0);
+	MapCamera * mapCamera = new MapCamera(map, settings.screenWidth / 32, settings.screenHeight / 32);
 	battleField->setMapCamera(mapCamera);
 
 	MapDrawer * mapDrawer = new MapDrawer(settings.screenWidth / 32, settings.screenHeight / 32);

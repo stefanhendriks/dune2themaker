@@ -1,11 +1,12 @@
 #ifndef MAPCAMERA_H
 #define MAPCAMERA_H
 
+#include "map.h"
+
 class MapCamera {
 
 	public:
-		MapCamera();
-		MapCamera(int x, int y);
+		MapCamera(Map * map, int viewportWidth, int viewportHeight);
 		~MapCamera();
 		
 		int getX() { return x; }
@@ -14,7 +15,12 @@ class MapCamera {
 		void moveTo(int x, int y);
 
 	private:
+		void handleMapBoundaries();
+
 		int x, y;
+		int viewportHeight, viewportWidth;
+
+		Map * map;
 
 	
 };
