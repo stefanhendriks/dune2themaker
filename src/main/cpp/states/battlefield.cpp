@@ -50,7 +50,7 @@ void BattleField::onMouseEvent(SDL_MouseButtonEvent * mouse) {
 	if ((mouse->button == SDL_BUTTON_LEFT) ) { // || (mouse->button == 5) --> mouse wheel down
 		// manipulate map
 		MapEditor * mapEditor = new MapEditor(map);
-		mapEditor->setTile(x, y, 40);
+		mapEditor->setTerrain(x, y, TERRAIN_ROCK);
 	}
 
 	if ((mouse->button == SDL_BUTTON_RIGHT) ) { // || (mouse->button == 5) --> mouse wheel down
