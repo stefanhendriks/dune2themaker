@@ -24,6 +24,10 @@ class Cell {
 			this->tile = tile; 
 		}
 
+		void setTerrainType(TerrainTypes terrainType) {
+			this->terrainType = terrainType;
+		}
+		
 		// Getters
 		TerrainTypes getTerrainType() { 
 			return terrainType; 

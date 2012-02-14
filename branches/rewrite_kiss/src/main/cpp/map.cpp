@@ -41,6 +41,57 @@ int Map::toCell(int x, int y) {
 	return (y * width) + x;
 }
 
+int Map::toCellAbove(int cell) {
+	if ((cell - width) < 0)	return -1;
+	return (cell - width);
+}
+
+int Map::toCellBelow(int cell) {
+	if ((cell + width) >= size) return -1;
+	return (cell + width);	
+}
+
+int Map::toCellLeft(int cell) {
+	int x = cell % width;
+
+	if (x - 1 < 0) return -1;
+	if (cell - 1 < 0) return -1;
+
+	return cell - 1;
+}
+
+int Map::toCellRight(int cell) {
+	int x = cell % width;
+
+	if (x + 1 >= width) return -1;
+	if (cell + 1 >= size) return -1;
+
+	return cell + 1;
+}
+
+int Map::toCellUpperLeft(int cell) {
+	int above = toCellAbove(cell);
+	if (above < 0) return -1;
+	return toCellLeft(above);
+}
+
+int Map::toCellUpperRight(int cell) {
+	int above = toCellAbove(cell);
+	if (above < 0) return -1;
+	return toCellRight(above);
+}
+
+int Map::toCellLowerLeft(int cell) {
+	int below = toCellBelow(cell);
+	if (below < 0) return -1;
+	return toCellLeft(below);		
+}
+
+int Map::toCellLowerRight(int cell) {
+	int below = toCellBelow(cell);
+	if (below < 0) return -1;
+	return toCellRight(below);		
+}
 
 Cell * Map::getCell(int index) {
 	if (index >= size || index < 0) {
