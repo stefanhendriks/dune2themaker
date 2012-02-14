@@ -33,7 +33,11 @@ void Game::onEvent(SDL_Event * event) {
 		running = false;
 	}
 
-	if (gameState)	gameState->onEvent(event);
+	if (gameState) {
+		if (event->type == SDL_KEYDOWN || event->type == SDL_KEYUP) {
+			gameState->onKeyboardEvent(&event->key);	
+		}
+	}
 }
 
 void Game::update() {

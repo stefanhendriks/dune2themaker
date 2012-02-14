@@ -17,7 +17,11 @@ void GameState::render() {
 	// pure virtual
 }
 
-void GameState::onEvent(SDL_Event * event) {
+void GameState::onKeyboardEvent(SDL_KeyboardEvent * key) {
+	// pure virtual
+}
+
+void GameState::onMouseEvent(SDL_Event * event) {
 	// pure virtual
 }
 
