@@ -5,6 +5,8 @@
 
 #include "surfacedao.h"
 #include "surfacedrawer.h"
+#include "mapdrawer.h"
+
 #include "states/gamestate.h"
 
 class Game {
@@ -14,7 +16,7 @@ class Game {
 		~Game();
 
 		int execute();
-
+		int init();
 
 		// setters
 		void setGameState(GameState * gameState) {
@@ -24,8 +26,6 @@ class Game {
 		void setScreen(SDL_Surface * screen) {
 			this->screen = screen;
 		}
-		
-		int init();
 
 	private:
 		bool running;
@@ -39,13 +39,14 @@ class Game {
 
 		void onEvent(SDL_Event * event);
 		
+		// resources
 		SDL_Surface * screen;
-
 		SDL_Surface * mouse;
 
-		// Dependencies
+		// dependencies
 		SurfaceDao surfaceDao;
 		SurfaceDrawer surfaceDrawer;
+		
 		GameState * gameState;
 };
 
