@@ -39,18 +39,24 @@ void BattleField::onKeyboardEvent(SDL_KeyboardEvent * key) {
 }
 
 void BattleField::onMouseEvent(SDL_MouseButtonEvent * mouse) {
-	if ((mouse->button == SDL_BUTTON_LEFT) ) { // || (mouse->button == 5) --> mouse wheel down
-		// TEMP: provide some feedback
-		int mouseX, mouseY;
-		SDL_GetMouseState(&mouseX, &mouseY);
-		mouseX += mapCamera->getX();
-		mouseY += mapCamera->getY();
-		int x = mouseX / 32;
-		int y = mouseY / 32;
+	// TEMP: provide some feedback
+	int mouseX, mouseY;
+	SDL_GetMouseState(&mouseX, &mouseY);
+	mouseX += mapCamera->getX();
+	mouseY += mapCamera->getY();
+	int x = mouseX / 32;
+	int y = mouseY / 32;
 
+	if ((mouse->button == SDL_BUTTON_LEFT) ) { // || (mouse->button == 5) --> mouse wheel down
 		// manipulate map
 		MapEditor * mapEditor = new MapEditor(map);
 		mapEditor->setTile(x, y, 40);
+	}
+
+	if ((mouse->button == SDL_BUTTON_RIGHT) ) { // || (mouse->button == 5) --> mouse wheel down
+		// manipulate map
+		MapEditor * mapEditor = new MapEditor(map);
+		mapEditor->smooth(map->toCell(x, y));
 	}
 }
 

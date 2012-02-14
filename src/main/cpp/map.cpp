@@ -34,10 +34,13 @@ Map::~Map() {
 }
 
 Cell * Map::getCell(int x, int y) {
-	int cell = (y * width) + x;
-	//cout << "x,y [" << x << "," << y << "] makes cell [" << cell << "]" << endl;
-	return getCell(cell);
+	return getCell(toCell(x, y));
 }
+
+int Map::toCell(int x, int y) {
+	return (y * width) + x;
+}
+
 
 Cell * Map::getCell(int index) {
 	if (index >= size || index < 0) {
