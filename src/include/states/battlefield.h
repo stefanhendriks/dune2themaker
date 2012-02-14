@@ -22,7 +22,7 @@ class BattleField : public GameState {
 		void render();
 
 		void onKeyboardEvent(SDL_KeyboardEvent * key);
-		void onMouseEvent(SDL_Event * event);
+		void onMouseEvent(SDL_MouseButtonEvent * mouse);
 
 		void shutdown();
 

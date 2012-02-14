@@ -34,8 +34,13 @@ void Game::onEvent(SDL_Event * event) {
 	}
 
 	if (gameState) {
+		// not too happy with this, how do we distinguish the two later on!?
 		if (event->type == SDL_KEYDOWN || event->type == SDL_KEYUP) {
 			gameState->onKeyboardEvent(&event->key);	
+		}
+		// not too happy with this, how do we distinguish the two later on!?
+		if (event->type == SDL_MOUSEBUTTONDOWN || event->type == SDL_MOUSEBUTTONUP) {
+			gameState->onMouseEvent(&event->button);	
 		}
 	}
 }
