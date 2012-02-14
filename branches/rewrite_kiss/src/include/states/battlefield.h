@@ -1,6 +1,8 @@
 #ifndef GAMESTATE_BATTLEFIELD_H
 #define GAMESTATE_BATTLEFIELD_H
 
+#include "game.h"
+
 #include "gamestate.h"
 #include "tileset.h"
 #include "map.h"
@@ -12,14 +14,15 @@ class BattleField : public GameState {
 	
 	public:
 		BattleField();
-		
+
 		int init();
 
 		void handleEvents();
 		void update();
 		void render();
 
-		void onEvent(SDL_Event * event);
+		void onKeyboardEvent(SDL_KeyboardEvent * key);
+		void onMouseEvent(SDL_Event * event);
 
 		void shutdown();
 
@@ -36,17 +39,29 @@ class BattleField : public GameState {
 			this->map = map;
 		}
 
-	private:
+		void setScreen(SDL_Surface * screen) {
+			this->screen = screen;
+		}
 
+		void setGame(Game * game) {
+			this->game = game;
+		}
+
+	private:
 		// resources
 		Tileset * tileset;
 
 		// state
 		Map * map;
 		MapCamera * mapCamera;
+		Game * game;
 
 		// dependencies
 		MapDrawer * mapDrawer;
+
+		// screen to draw to
+		SDL_Surface * screen;
+
 };
 
 

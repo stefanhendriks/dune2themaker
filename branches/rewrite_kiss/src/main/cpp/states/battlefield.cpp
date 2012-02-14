@@ -32,6 +32,18 @@ int BattleField::init() {
 	return 0;
 }
 
+void BattleField::onKeyboardEvent(SDL_KeyboardEvent * key) {
+	if (key->type == SDL_KEYDOWN) {
+		if (key->keysym.sym == SDLK_ESCAPE) {
+			game->stop();
+		}	
+	}	
+}
+
+void BattleField::onMouseEvent(SDL_Event * event) {
+	
+}
+
 void BattleField::handleEvents() {
 	
 }
@@ -41,11 +53,7 @@ void BattleField::update() {
 }
 
 void BattleField::render() {
-	mapDrawer->drawMap(map, mapCamera);
-}
-
-void BattleField::onEvent(SDL_Event * event) {
-	
+	mapDrawer->drawMap(screen, map, mapCamera);
 }
 
 void BattleField::shutdown() {

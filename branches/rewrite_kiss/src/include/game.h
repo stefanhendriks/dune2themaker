@@ -27,6 +27,8 @@ class Game {
 			this->screen = screen;
 		}
 
+		void stop() { running = false; }
+
 	private:
 		bool running;
 

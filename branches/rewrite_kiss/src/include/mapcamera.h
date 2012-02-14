@@ -12,6 +12,9 @@ class MapCamera {
 		int getX() { return x; }
 		int getY() { return y; }
 
+		int getXWithViewportWidth() { return x + viewportWidth; }
+		int getYWithViewportHeight() { return y + viewportHeight; }
+
 		void moveTo(int x, int y);
 
 	private:

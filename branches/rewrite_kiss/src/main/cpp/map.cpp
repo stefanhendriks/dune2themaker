@@ -35,7 +35,7 @@ Map::~Map() {
 
 Cell * Map::getCell(int x, int y) {
 	int cell = (y * width) + x;
-	cout << "x,y [" << x << "," << y << "] makes cell [" << cell << "]" << endl;
+	//cout << "x,y [" << x << "," << y << "] makes cell [" << cell << "]" << endl;
 	return getCell(cell);
 }
 

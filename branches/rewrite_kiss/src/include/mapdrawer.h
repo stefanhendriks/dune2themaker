@@ -9,11 +9,11 @@
 class MapDrawer {
 
 	public:
-		MapDrawer(int viewWidth, int viewHeight);
+		MapDrawer(int viewWidth, int viewHeight, int tilesizeWidth, int tilesizeHeight);
 		~MapDrawer();
 
-		void drawMap(Map * map, MapCamera * camera);
-		void drawMinimap(Map * map, MapCamera * camera, int x, int y);
+		void drawMap(SDL_Surface * dest, Map * map, MapCamera * camera);
+		void drawMinimap(SDL_Surface * dest, Map * map, MapCamera * camera, int x, int y);
 
 		void setTileset(Tileset * tileset) {
 			this->tileset = tileset;
@@ -22,6 +22,9 @@ class MapDrawer {
 	private:
 		int viewWidth;
 		int viewHeight;
+
+		int tilesizeWidth;
+		int tilesizeHeight;
 
 		// resources
 		Tileset * tileset;

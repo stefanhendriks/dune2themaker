@@ -33,10 +33,7 @@ Game GameFactory::create() {
 		
 	SDL_ShowCursor(0); 
 
-	cout << "SDL Init, screen surface allocated and showcursus set to 0." << endl;
-
-	Game game;
-
+	cout << "SDL Initialized. Creating gamestate and game." << endl;
 	// TODO: create game state factory
 	BattleField * battleField = new BattleField();
 	battleField->setScreen(screen);
@@ -47,14 +44,16 @@ Game GameFactory::create() {
 	MapCamera * mapCamera = new MapCamera(map, settings.screenWidth / 32, settings.screenHeight / 32);
 	battleField->setMapCamera(mapCamera);
 
-	MapDrawer * mapDrawer = new MapDrawer(settings.screenWidth / 32, settings.screenHeight / 32);
+	MapDrawer * mapDrawer = new MapDrawer(settings.screenWidth, settings.screenHeight, 32, 32);
 	battleField->setMapDrawer(mapDrawer);
 
+	battleField->setScreen(screen);
 	battleField->init();
-
-
+	
+	Game game;
 	game.setGameState(battleField);
 	game.setScreen(screen);
+	battleField->setGame(&game);
 	
 	if (game.init() != 0) {
 		cout << "Error initializing game." << endl;
