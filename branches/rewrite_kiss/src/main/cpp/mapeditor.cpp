@@ -22,6 +22,20 @@ void MapEditor::setTerrain(int x, int y, TerrainTypes terrainType) {
 	cellObj->setTile(getDefaultTerrainTile(terrainType));
 }
 
+void MapEditor::smoothCellsAroundCell(int cell) {
+	smooth(map->toCellAbove(cell));
+	smooth(map->toCellBelow(cell));
+	smooth(map->toCellLeft(cell));
+	smooth(map->toCellRight(cell));
+
+	smooth(map->toCellUpperLeft(cell));
+	smooth(map->toCellUpperRight(cell));
+	smooth(map->toCellLowerLeft(cell));
+	smooth(map->toCellLowerRight(cell));
+
+	smooth(cell);
+}
+
 void MapEditor::smooth(int cell) {
 	Cell * cellObj = map->getCell(cell);
 	if (cellObj == NULL) return;
@@ -33,6 +47,8 @@ void MapEditor::smooth(int cell) {
 		cellObj->getTerrainType() == TERRAIN_MOUNTAIN) {
 		facingIndex = smoothRock(cell);
 	}
+
+	if (facingIndex < 0) return;
 
 	int defaultIndex = getDefaultTerrainTile(cellObj->getTerrainType());
 	cellObj->setTile(defaultIndex + facingIndex);
