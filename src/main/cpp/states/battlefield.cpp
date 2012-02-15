@@ -56,7 +56,7 @@ void BattleField::onMouseEvent(SDL_MouseButtonEvent * mouse) {
 	if ((mouse->button == SDL_BUTTON_RIGHT) ) { // || (mouse->button == 5) --> mouse wheel down
 		// manipulate map
 		MapEditor * mapEditor = new MapEditor(map);
-		mapEditor->smooth(map->toCell(x, y));
+		mapEditor->smoothCellsAroundCell(map->toCell(x, y));
 	}
 }
 

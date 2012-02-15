@@ -12,9 +12,13 @@ class MapEditor {
 		void randomize();
 
 		void smooth(int cell);
+		void smoothCellsAroundCell(int cell);
 
 		void setTile(int x, int y, int tile);
 		void setTerrain(int x, int y, TerrainTypes terrainType);
+
+		void setTile(int cell, int tile);
+		void setTerrain(int cell, TerrainTypes terrainType);
 
 		bool isTerrainType(int cell, TerrainTypes terrainType);
 		
