@@ -1,0 +1,37 @@
+Build process:
+
+Should support the following directory struture:
+
+src 				
+src/include   		--> contains all include files
+src/main	  		--> contains all production code
+src/main/resources  --> put within here the required directory structure for your application, here all data resides
+src/test	  		--> contains all test code
+src/test/resources  
+src/lib		  		--> put here all required DLL's you need to run your application
+
+bin/				the generated binaries end up here
+bin/main		  	--> binaries corresponding with the application
+bin/test			--> binaries corresponding with the tests
+
+
+Should support the following tasks:
+
+clean
+ test
+ main
+ all
+
+package
+  creates main binaries
+
+compile
+
+
+compile-tests
+
+
+
+
+other requirements:
+- should be flexible, no need to add cpp files by hand in the makefile (nor header files)
