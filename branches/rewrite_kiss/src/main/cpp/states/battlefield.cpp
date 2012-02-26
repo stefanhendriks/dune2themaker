@@ -11,7 +11,6 @@ using namespace std;
 BattleField::BattleField() {
 	tileset = NULL;
 	map = NULL;
-	leftMouseButtonPressed = rightMouseButtonPressed = false;
 }
 
 int BattleField::init() {
@@ -39,24 +38,12 @@ void BattleField::onKeyboardEvent(SDL_KeyboardEvent * key) {
 	}	
 }
 
-void BattleField::onMouseDownEvent(SDL_MouseButtonEvent * mouse) {
-	if ((mouse->button == SDL_BUTTON_LEFT) ) {
-		leftMouseButtonPressed = true;
-	}
-
-	if ((mouse->button == SDL_BUTTON_RIGHT) ) {
-		rightMouseButtonPressed = true;
-	}
+void BattleField::onMouseDownEvent(SDL_MouseButtonEvent * event) {
+	mouse.onMouseDownEvent(event);
 }
 
-void BattleField::onMouseUpEvent(SDL_MouseButtonEvent * mouse) {
-	if ((mouse->button == SDL_BUTTON_LEFT) ) {
-		leftMouseButtonPressed = false;
-	}
-
-	if ((mouse->button == SDL_BUTTON_RIGHT) ) {
-		rightMouseButtonPressed = false;
-	}
+void BattleField::onMouseUpEvent(SDL_MouseButtonEvent * event) {
+	mouse.onMouseUpEvent(event);
 }
 
 void BattleField::handleEvents() {
@@ -76,11 +63,11 @@ void BattleField::update() {
 
 	MapEditor * mapEditor = new MapEditor(map);
 
-	if (leftMouseButtonPressed) {
+	if (mouse.isLeftMouseButtonPressed()) {
 		mapEditor->setTerrain(x, y, TERRAIN_ROCK);
 	}
 
-	if (rightMouseButtonPressed) {
+	if (mouse.isRightMouseButtonPressed()) {
 		mapEditor->smoothCellsAroundCell(map->toCell(x, y));
 	}
 	
