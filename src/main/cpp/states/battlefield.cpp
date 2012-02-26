@@ -11,6 +11,7 @@ using namespace std;
 BattleField::BattleField() {
 	tileset = NULL;
 	map = NULL;
+	leftMouseButtonPressed = rightMouseButtonPressed = false;
 }
 
 int BattleField::init() {
@@ -38,25 +39,23 @@ void BattleField::onKeyboardEvent(SDL_KeyboardEvent * key) {
 	}	
 }
 
-void BattleField::onMouseEvent(SDL_MouseButtonEvent * mouse) {
-	// TEMP: provide some feedback
-	int mouseX, mouseY;
-	SDL_GetMouseState(&mouseX, &mouseY);
-	mouseX += mapCamera->getX();
-	mouseY += mapCamera->getY();
-	int x = mouseX / 32;
-	int y = mouseY / 32;
-
-	if ((mouse->button == SDL_BUTTON_LEFT) ) { // || (mouse->button == 5) --> mouse wheel down
-		// manipulate map
-		MapEditor * mapEditor = new MapEditor(map);
-		mapEditor->setTerrain(x, y, TERRAIN_ROCK);
+void BattleField::onMouseDownEvent(SDL_MouseButtonEvent * mouse) {
+	if ((mouse->button == SDL_BUTTON_LEFT) ) {
+		leftMouseButtonPressed = true;
 	}
 
-	if ((mouse->button == SDL_BUTTON_RIGHT) ) { // || (mouse->button == 5) --> mouse wheel down
-		// manipulate map
-		MapEditor * mapEditor = new MapEditor(map);
-		mapEditor->smoothCellsAroundCell(map->toCell(x, y));
+	if ((mouse->button == SDL_BUTTON_RIGHT) ) {
+		rightMouseButtonPressed = true;
+	}
+}
+
+void BattleField::onMouseUpEvent(SDL_MouseButtonEvent * mouse) {
+	if ((mouse->button == SDL_BUTTON_LEFT) ) {
+		leftMouseButtonPressed = false;
+	}
+
+	if ((mouse->button == SDL_BUTTON_RIGHT) ) {
+		rightMouseButtonPressed = false;
 	}
 }
 
@@ -65,7 +64,27 @@ void BattleField::handleEvents() {
 }
 
 void BattleField::update() {
+	// TEMP: provide some feedback
+	int mouseX, mouseY;
+	SDL_GetMouseState(&mouseX, &mouseY);
+	cout << "mouseX and mouseY = [" << mouseX << "," << mouseY << "]" << endl;
+
+	mouseX += mapCamera->getX();
+	mouseY += mapCamera->getY();
+	int x = mouseX / 32;
+	int y = mouseY / 32;
+
+	MapEditor * mapEditor = new MapEditor(map);
+
+	if (leftMouseButtonPressed) {
+		mapEditor->setTerrain(x, y, TERRAIN_ROCK);
+	}
+
+	if (rightMouseButtonPressed) {
+		mapEditor->smoothCellsAroundCell(map->toCell(x, y));
+	}
 	
+	delete mapEditor;
 }
 
 void BattleField::render() {

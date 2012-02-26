@@ -13,7 +13,8 @@ class GameState {
 		virtual void render();
 
 		virtual void onKeyboardEvent(SDL_KeyboardEvent * key);
-		virtual void onMouseEvent(SDL_MouseButtonEvent * mouse);
+		virtual void onMouseDownEvent(SDL_MouseButtonEvent * mouse);
+		virtual void onMouseUpEvent(SDL_MouseButtonEvent * mouse);
 
 		virtual void shutdown();
 

@@ -22,7 +22,8 @@ class BattleField : public GameState {
 		void render();
 
 		void onKeyboardEvent(SDL_KeyboardEvent * key);
-		void onMouseEvent(SDL_MouseButtonEvent * mouse);
+		void onMouseDownEvent(SDL_MouseButtonEvent * mouse);
+		void onMouseUpEvent(SDL_MouseButtonEvent * mouse);
 
 		void shutdown();
 
@@ -48,6 +49,8 @@ class BattleField : public GameState {
 		}
 
 	private:
+		bool leftMouseButtonPressed, rightMouseButtonPressed;
+
 		// resources
 		Tileset * tileset;
 
