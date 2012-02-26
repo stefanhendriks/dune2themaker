@@ -3,6 +3,7 @@
 
 #include "game.h"
 
+#include "mouse.h"
 #include "gamestate.h"
 #include "tileset.h"
 #include "map.h"
@@ -49,10 +50,13 @@ class BattleField : public GameState {
 		}
 
 	private:
-		bool leftMouseButtonPressed, rightMouseButtonPressed;
+
 
 		// resources
 		Tileset * tileset;
+
+		// Mouse
+		Mouse mouse;
 
 		// state
 		Map * map;
