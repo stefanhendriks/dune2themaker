@@ -1,0 +1,5 @@
+#Documentation regarding the source code
+
+= Allegro =
+
+Allegro is currently used. You can find documentation at [http://alleg.sourceforge.net/stabledocs/en/ here]
