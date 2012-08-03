@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+
+<!-- BlackBerry® 10 application descriptor file.
+
+    Specifies parameters for identifying, installing, and launching native applications on BlackBerry® 10 OS.
+-->
+
+    <!-- A universally unique application identifier. Must be unique across all BlackBerry applications.
+         Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
+    <id>com.example.dune2themaker</id>
+
+    <!-- The name that is displayed in the BlackBerry application installer. 
+         May have multiple values for each language. See samples or xsd schema file. Optional. -->
+    <name>dune2themaker</name>
+    
+    <!-- A string value of the format <0-999>.<0-999>.<0-999> that represents application version which can be used to check for application upgrade. 
+         Values can also be 1-part or 2-part. It is not necessary to have a 3-part value.
+         An updated version of application must have a versionNumber value higher than the previous version. Required. -->
+    <versionNumber>1.0.0</versionNumber>
+
+    <!-- Fourth digit segment of the package version. First three segments are taken from the 
+         <versionNumber> element.  Must be an integer from 0 to 2^16-1 -->
+    <buildId>1</buildId>
+                 
+    <!-- Description, displayed in the BlackBerry application installer.
+         May have multiple values for each language. See samples or xsd schema file. Optional. -->
+    <description>The dune2themaker application</description>
+
+    <!--  Name of author which is used for signing. Must match the developer name of your development certificate. -->
+    <author>Example Inc.</author>
+    
+    <!--  Unique author ID assigned by signing authority. Required if using debug tokens. -->
+    <!-- <authorId>ABC1234YjsnUk235h</authorId> -->
+   
+    <initialWindow>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+    </initialWindow>
+    
+    <!--  The category where the application appears. Either core.games or core.media. -->
+    <category>core.games</category>
+    <asset path="icon.png">icon.png</asset>
+    <configuration id="com.qnx.qcc.configuration.exe.debug.231497430" name="Device-Debug">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="Device-Debug/dune2themaker" entry="true" type="Qnx/Elf">dune2themaker</asset>
+       <asset path="${workspace_loc:/SDL12/Device-Debug/libSDL12.so}" type="Qnx/Elf">lib/libSDL12.so</asset>
+       <asset path="${workspace_loc:/SDL_ttf/Device-Debug/libSDL_ttf.so}" type="Qnx/Elf">lib/libSDL_ttf.so</asset>
+    </configuration>
+    <configuration id="com.qnx.qcc.configuration.exe.release.616943639" name="Device-Release">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="Device-Release/dune2themaker" entry="true" type="Qnx/Elf">dune2themaker</asset>
+       <asset path="${workspace_loc:/SDL12/Device-Release/libSDL12.so}" type="Qnx/Elf">lib/libSDL12.so</asset>
+       <asset path="${workspace_loc:/SDL_ttf/Device-Release/libSDL_ttf.so}" type="Qnx/Elf">lib/libSDL_ttf.so</asset>
+    </configuration>
+    <configuration id="com.qnx.qcc.configuration.exe.profile.515347478" name="Device-Profile">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="Device-Profile/dune2themaker" entry="true" type="Qnx/Elf">dune2themaker</asset>
+       <asset path="${workspace_loc:/SDL12/Device-Profile/libSDL12.so}" type="Qnx/Elf">lib/libSDL12.so</asset>
+       <asset path="${workspace_loc:/SDL_ttf/Device-Profile/libSDL_ttf.so}" type="Qnx/Elf">lib/libSDL_ttf.so</asset>
+    </configuration>
+    <configuration id="com.qnx.qcc.configuration.exe.profile.coverage.1595604976" name="Device-Coverage">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="Device-Coverage/dune2themaker" entry="true" type="Qnx/Elf">dune2themaker</asset>
+       <asset path="${workspace_loc:/SDL12/Device-Coverage/libSDL12.so}" type="Qnx/Elf">lib/libSDL12.so</asset>
+       <asset path="${workspace_loc:/SDL_ttf/Device-Coverage/libSDL_ttf.so}" type="Qnx/Elf">lib/libSDL_ttf.so</asset>
+    </configuration>
+    <configuration id="com.qnx.qcc.configuration.exe.debug.395607121" name="Simulator-Debug">
+       <platformArchitecture>x86</platformArchitecture>
+       <asset path="Simulator-Debug/dune2themaker" entry="true" type="Qnx/Elf">dune2themaker</asset>
+       <asset path="${workspace_loc:/SDL12/Simulator-Debug/libSDL12.so}" type="Qnx/Elf">lib/libSDL12.so</asset>
+       <asset path="${workspace_loc:/SDL_ttf/Simulator-Debug/libSDL_ttf.so}" type="Qnx/Elf">lib/libSDL_ttf.so</asset>
+    </configuration>
+    <configuration id="com.qnx.qcc.configuration.exe.profile.1588430922" name="Simulator-Profile">
+       <platformArchitecture>x86</platformArchitecture>
+       <asset path="Simulator-Profile/dune2themaker" entry="true" type="Qnx/Elf">dune2themaker</asset>
+       <asset path="${workspace_loc:/SDL12/Simulator-Profile/libSDL12.so}" type="Qnx/Elf">lib/libSDL12.so</asset>
+       <asset path="${workspace_loc:/SDL_ttf/Simulator-Profile/libSDL_ttf.so}" type="Qnx/Elf">lib/libSDL_ttf.so</asset>
+    </configuration>
+    <configuration id="com.qnx.qcc.configuration.exe.profile.coverage.478627052" name="Simulator-Coverage">
+       <platformArchitecture>x86</platformArchitecture>
+       <asset path="Simulator-Coverage/dune2themaker" entry="true" type="Qnx/Elf">dune2themaker</asset>
+       <asset path="${workspace_loc:/SDL12/Simulator-Coverage/libSDL12.so}" type="Qnx/Elf">lib/libSDL12.so</asset>
+       <asset path="${workspace_loc:/SDL_ttf/Simulator-Coverage/libSDL_ttf.so}" type="Qnx/Elf">lib/libSDL_ttf.so</asset>
+    </configuration>
+    
+    <!--  The icon for the application, which should be 86x86. -->
+    <icon>
+       <image>icon.png</image>
+    </icon>
+    
+    <!--  The splash screen that will appear when your application is launching. Should be 1024x600. -->
+    <!-- <splashscreen></splashscreen> -->
+
+    <!-- Request permission to execute native code.  Required for native applications. -->
+    <action system="true">run_native</action>
+    
+    <!--  The permissions requested by your application. -->
+    <!--  <action>access_shared</action> -->
+    <!--  <action>record_audio</action> -->
+    <!--  <action>read_geolocation</action> -->
+    <!--  <action>use_camera</action> -->
+    <!--  <action>access_internet</action> -->
+    <!--  <action>play_audio</action> -->
+    <!--  <action>post_notification</action> -->
+    <!--  <action>set_audio_volume</action> -->
+    <!--  <action>read_device_identifying_information</action> -->
+    <!--  <action>access_led_control</action> -->
+    <!--  <action>run_when_backgrounded</action> -->
+    
+
+    <!-- Ensure that shared libraries in the package are found at run-time. -->
+    <env var="LD_LIBRARY_PATH" value="app/native/lib"/>
+    
+</qnx>
