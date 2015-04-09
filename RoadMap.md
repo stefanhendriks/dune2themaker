@@ -1,0 +1,46 @@
+| **Last Update** | 12 October 2011 |
+|:----------------|:----------------|
+| **Maintainer(s)** | Stefan Hendriks |
+| **Status** | Concept |
+| **Audience** | All |
+|  | Public Domain |
+
+## Purpose ##
+
+This page describes the development roadmap of Dune II - The Maker. This roadmap is determined by [UserStories](UserStories.md).
+
+## Roadmap ##
+
+Note, the last public stable released was versioned as a DEMO. Next versions will be using the known MAJOR.MINOR.PATCH version numbering.
+
+The goal is to have a public stable version for whenever a new version (upping MINOR) is created. All development within the MINOR is number within PATCH. Meaning, the current unstable version is legally named 0.4.6. The next aimed stable version is 0.5
+
+Coming paragraphs; a quick summary of versions. Then for each next planned version the goals set. These goals are taken from the [UserStories](UserStories.md).
+
+### Versions ###
+| Release type | Version |
+|:-------------|:--------|
+| Current public stable | **DEMO 4** |
+| Current public unstable  | **Version 0.4.6** |
+| Next public stable | **0.5** |
+
+
+### Version 0.5 ###
+Goal: Deliver a stable game, which offers skirmish mode only.
+User stories:
+| Issue | User story |
+|:------|:-----------|
+| [issue 46](https://code.google.com/p/dune2themaker/issues/detail?id=46) | As a player I should be able to play a skirmish game, so that the game is playable |
+
+
+### Goals 0.6 ###
+TBD.
+
+
+### Goals 0.7 ###
+TBD.
+
+
+
+### Vocabulary ###
+TBD = To Be Determined

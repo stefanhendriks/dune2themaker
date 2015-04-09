@@ -1,0 +1,30 @@
+# Introduction #
+
+Requirements of this game are formulated in user stories. Each user story will break down in several tasks.
+
+Each next release takes one or more user story as goal.
+
+# User stories formatting #
+User stories should be written as:
+
+As a 
+
+&lt;role&gt;
+
+ I can/should 
+
+&lt;feature&gt;
+
+ so that 
+
+&lt;reason&gt;
+
+
+
+| Issue | User story | Specs |
+|:------|:-----------|:------|
+| [issue 46](https://code.google.com/p/dune2themaker/issues/detail?id=46) | As a player I should be able to play a skirmish game, so that the game is playable | [SkirmishMode](SkirmishMode.md) |
+| [issue 47](https://code.google.com/p/dune2themaker/issues/detail?id=47) | As a player I should be able to play campaign mode, so that I can (re)play the original story line | [CampaignMode](CampaignMode.md) |
+| todo | As a player I should be able to save and load the game, so I can return and play later |  |
+| todo | As a player I can see my scores so that when I win the game I am presented on how well I did |  |
+| todo | As a player I can use my super weapons so that I can win the game |  |

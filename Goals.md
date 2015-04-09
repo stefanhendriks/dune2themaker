@@ -1,0 +1,96 @@
+| **Last Update** | 2 Jan 2009 |
+|:----------------|:-----------|
+| **Maintainer(s)** | Richard de Jong (rdejong81) |
+| **Status** | Proposal |
+| **Audience** | Developers |
+|  | Public Domain |
+
+
+
+
+## Purpose ##
+
+This page describes the design goals for the envisioned game “Dune2 – The Maker”.
+This page will help shape the future direction the project will take and will be continuously updated to reflect decisions where the project will advance forward to.
+
+> Note: _This document is currently a work in progres and you are encouraged to input and give comments regarding this work_.
+
+## Vision ##
+
+_"I envision a game where I can choose to connect to a server from several freely maintained by players following a choice which side I would like to join. I decide to create my own side and take ownership of it allowing me to define a banner color._
+
+_Following is a hard struggle to get enough spice to create a mini base with only a basic starting unit. I’m now in the main chat channels asking if anyone would like to join my side as I cannot do this on my own, I decide to change the name of my side. Someone requests to join and agrees to mine for spice while I continue defending the base and complete construction of a construction yard."_  -- Richard de Jong.
+
+## Development Structure and Cycles ##
+
+To make some structure and planning possibilities, features are made as modules that are apart of a phase being apart of a milestone like this:
+
+  * Milestones
+    * Phases
+      * Features
+        * Modules
+
+The module describes the exact (portions of) files/classes the feature entails. Obviously making use of a tracker issue for a detailed implementation description allows other developers the vision where the project is going to and what its current status is. More over, it allows one to see who is working on what. Added some commenting/discussion options that come with tracker issues.
+
+A development cycle is also needed to prevent features from never completing, or completing in the wrong order. Typically a milestone cycle could look like as described below and advancing each step in the schema must be authorized by the project manager to avoid miscommunications and development clashes:
+
+  * Milestone cycle
+    1. Phase cycle
+      1. Assign features. New features can be planned and assigned for this cycle aswell.
+      1. Create/Update feature branches. (Everyone uses the features branch specified in [RoadMap](RoadMap.md)!)
+      1. Develop. (Development cycle on each feature branch)
+      1. Stop accepting new feature assignments to this phase.
+        * Individual developers will mature their code in feature branches.
+        * Trunk remains locked for commits.
+        * State remains untill developers are ready with their assignments.
+        * New features should be pushed back to later phases or milestones as deemed neccesary.
+      1. Unlock trunk for commits. Merge features to trunk.
+        * Approving individual development to trunk for current phase.
+      1. All is handed in?-> Lock trunk! (Locking further development for current phase)
+        * New features should be pushed back to later phases or milestones as deemed neccesary.
+      1. Bugfix trunk. (Bugfixing trunk untill all bugs are fixed.)
+    1. (Pre) Release cycle
+      1. Creating branch for release. (Copy of trunk)
+      1. In parralel one can now go to the next Phase cycle.
+      1. Creating downloadable pre-release binaries for the release branch.
+      1. Setting time period for accepting bugfixes in the release branch.
+      1. Each (set of) bugfixes will cause a new pre-release and an extended period of accepting bugfixes.
+      1. No more bugs within a set time period? Lock branch from further commits.
+      1. Make a final release for the current release branch.
+      1. Merge/Synchronise bugfixes back to trunk when possible.
+        * When this happens, developers working in parralel on the next phase need to synchronise their branch with the trunk again to avoid nasty collisions!
+      1. End of cycle, remaining is the next phase cycle that was started in parralel.
+
+Considerations:
+  * Of course considering this, all developers will share the same status inside the cycle to avoid clashing. With the only exception of 2.2 that one can start work on the next phase.
+  * It is required to somewhere state in the wiki (such as the roadmap) at which stage in the cycle we are, it should be easy to find and clear to all involved. A mail should be sent to all developers if the project advances to the next step in the cycle.
+  * It may seem more complex, but will favor for more developers developing in parallel.
+  * Another notion to be made is that this will promote more discussion and awareness of the status of the project.
+  * In this model, each phase will represent enough changes to warrant a release. If this is not the case then status 1.4 should not be advanced to untill the phase does have enough assigned features/bugfixes to warrant such future release.
+  * Feature branches can be worked on in parallel by more than 1 developer. Each feature will have a mainter or mainters who will coordinate the specific feature.
+
+## Feature status ##
+| **Legenda** |
+|:------------|
+| **Status** | **Explanation** | **Implementation** | **Explanation** |
+| _undecided_ | This feature has not been approved and is unplanned. | _unspecified_ | No spcification or proposal has been registered. |
+| _approved_ | Approved but does not have priority for the current or near future milestones. | _forming_ | A specification is being formed using google forms for input or proposals from members as input. |
+| _plannedlater_ | The feature is planned for a later milestone. See [RoadMap](RoadMap.md) | _specified_ (date) | An issue with the specified implementation of the feature has been completed. This should be a link to it. |
+| _planned_ | Planned for the current milestone. See [RoadMap](RoadMap.md) | _revised_ (date) | Specification has been updated at specified date. This should be a link. |
+| _inprogress_ | Work is being done on this main feature. See [RoadMap](RoadMap.md) for finer details when it will be subject for release. |
+
+| **Category** | **Feature** | **Status** | **Maintainer(s)** |
+|:-------------|:------------|:-----------|:------------------|
+| **Documentation** |
+|  |Project Wiki documentation push| _inprogress_ | rdejong81 |
+| **General** |
+|  |Multi-platform| _plannedlater_ _unspecified_ | - |
+|  |Point of View experience should allow micro management of structures and units per side.| _undecided_ _unspecified_| - |
+| **Networking** |
+|  |Client/Server seperation (Library undecided)|_undecided_ _unspecified_| - |
+|  |Persistent gameplay world across seperate player run servers|_undecided_ _unspecified_| - |
+|  |Chat communication for players and multiple chat channels functionality|_undecided unspecified_| - |
+| **Content** |
+|  |Resolving License Issues|_planned unspecified_| - |
+|  |GUI Layer and functions|_undecided unspecified_| - |
+|  |Alternate graphics and music per server|_undecided unspecified_| - |
